@@ -1,13 +1,5 @@
 package payment_strategy;
 
-//public class PagamentoContantiStrategy implements IPagamentoStrategy {
-//    @Override
-//    public void paga(double importo) {
-//        System.out.println("Pagamento di " + importo + " euro in contanti effettuato con successo.");
-//    }
-//}
-
-
 import exception.PagamentoFallitoException;
 
 public class PagamentoContantiStrategy implements IPagamentoStrategy {

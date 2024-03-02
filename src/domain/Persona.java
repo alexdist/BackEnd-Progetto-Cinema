@@ -1,6 +1,8 @@
 package domain;
 
-public abstract class Persona {
+import java.io.Serializable;
+
+public abstract class Persona implements Serializable {
     private String nome;
     private String cognome;
     private Ruolo ruolo; // Aggiunto il campo ruolo

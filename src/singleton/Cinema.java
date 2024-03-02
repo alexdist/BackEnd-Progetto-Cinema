@@ -32,6 +32,13 @@ public class Cinema {
         return instance; // Restituisce l'istanza esistente
     }
 
+    // Metodo setter per GestoreRicavi
+    public void setGestoreRicavi(GestoreRicavi gestoreRicavi) {
+        this.gestoreRicavi = gestoreRicavi;
+    }
+    public void setCaretaker(Caretaker caretaker) {
+        this.caretaker = caretaker;
+    }
     public void setGestioneCinema(GestioneCinema gestioneCinema) {
         this.gestioneCinema = gestioneCinema;
     }

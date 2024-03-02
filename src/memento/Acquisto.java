@@ -2,9 +2,10 @@ package memento;
 
 import ticket.Biglietto;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Acquisto implements AcquistoMemento {
+public class Acquisto implements AcquistoMemento, Serializable {
     // Variabili d'istanza private e finali per il biglietto e il timestamp dell'acquisto.
     // L'uso di final indica che queste variabili possono essere assegnate solo una volta, all'interno del costruttore.
     private final Biglietto biglietto;

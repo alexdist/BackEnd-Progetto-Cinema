@@ -1,14 +1,6 @@
 package payment_strategy;
 
 
-//public class PagamentoCartaDiCreditoStrategy implements IPagamentoStrategy {
-//    @Override
-//    public void paga(double importo) {
-//        System.out.println("Pagamento di " + importo + " euro con carta di credito effettuato con successo.");
-//    }
-//}
-
-
 import exception.PagamentoFallitoException;
 
 public class PagamentoCartaDiCreditoStrategy implements IPagamentoStrategy {

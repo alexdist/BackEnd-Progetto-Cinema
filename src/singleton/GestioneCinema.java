@@ -51,35 +51,7 @@ public class GestioneCinema implements Serializable {
         }
     }
 
-    // Metodo per creare un nuovo spettacolo
-//    public boolean creaSpettacolo(Film film, int numeroSala, LocalDateTime orarioProiezione) throws SalaNonEsistenteException, FilmNonInProgrammazioneException, SovrapposizioneSpettacoloException {
-//        Sala sala = sale.get(numeroSala);
-//        // Verifica l'esistenza della sala
-//        if (sala == null) {
-//            throw new SalaNonEsistenteException("Sala numero " + numeroSala + " non esiste.");
-//        }
-//        // Verifica che il film sia in programmazione
-//        if (filmInProgrammazione.stream().noneMatch(f -> f.getTitolo().equalsIgnoreCase(film.getTitolo()))) {
-//            throw new FilmNonInProgrammazioneException("Film \"" + film.getTitolo() + "\" non è presente nella programmazione.");
-//        }
-//
-//        LocalDateTime orarioFinePrevisto = orarioProiezione.plusMinutes(film.getDurata());
-//        // Controlla la sovrapposizione degli spettacoli
-//        for (Spettacolo spettacoloEsistente : programmazione) {
-//            if (spettacoloEsistente.getSala().getNumeroSala() == numeroSala) {
-//                LocalDateTime inizioEsistente = spettacoloEsistente.getOrarioProiezione();
-//                LocalDateTime fineEsistente = inizioEsistente.plusMinutes(spettacoloEsistente.getFilm().getDurata());
-//                if (orarioProiezione.isBefore(fineEsistente) && orarioFinePrevisto.isAfter(inizioEsistente)) {
-//                    throw new SovrapposizioneSpettacoloException("Impossibile programmare: sovrapposizione con spettacolo esistente.");
-//                }
-//            }
-//        }
-//
-//        // Se non ci sono sovrapposizioni, aggiunge lo spettacolo alla lista
-//        Spettacolo nuovoSpettacolo = new Spettacolo(film, sala, orarioProiezione);
-//        programmazione.add(nuovoSpettacolo);
-//        return true; // Indica il successo dell'operazione
-//    }
+
 
     public boolean creaSpettacolo(String idSpettacolo, Film film, int numeroSala, LocalDateTime orarioProiezione) throws SalaNonEsistenteException, FilmNonInProgrammazioneException, SovrapposizioneSpettacoloException, IDSpettacoloEsistenteException {
         Sala sala = sale.get(numeroSala);
@@ -115,17 +87,6 @@ public class GestioneCinema implements Serializable {
         return true; // Indica il successo dell'operazione
     }
 
-    // Metodo per trovare uno spettacolo specifico
-//    public Spettacolo trovaSpettacolo(Film film, int numeroSala, LocalDateTime orarioProiezione) {
-//        for (Spettacolo spettacolo : programmazione) {
-//            if (spettacolo.getFilm().equals(film) &&
-//                    spettacolo.getSala().getNumeroSala() == numeroSala &&
-//                    spettacolo.getOrarioProiezione().equals(orarioProiezione)) {
-//                return spettacolo; // Ritorna lo spettacolo trovato
-//            }
-//        }
-//        return null; // Nessuno spettacolo trovato che corrisponde ai criteri
-//    }
 
     public Spettacolo trovaSpettacolo(String idSpettacolo) {
         for (Spettacolo spettacolo : programmazione) {
@@ -149,5 +110,5 @@ public class GestioneCinema implements Serializable {
         return programmazione;
     }
 
-    // Nota: ulteriori metodi potrebbero essere aggiunti per gestire altre funzionalità, come la ricerca di film o la cancellazione di spettacoli.
+
 }

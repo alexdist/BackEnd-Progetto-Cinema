@@ -34,6 +34,7 @@ public class ServizioAcquistoBiglietto implements AcquistoBiglietto {
 
             Cinema.getInstance().getGestoreRicavi().registraVenditaBiglietto(biglietto);
 
+
             Caretaker caretaker = Cinema.getInstance().getCaretaker();
             caretaker.addMemento(new Acquisto(biglietto, LocalDateTime.now()));
 

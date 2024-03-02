@@ -1,14 +1,6 @@
 package payment_strategy;
 
 
-//public class PagamentoBancomatStrategy implements IPagamentoStrategy {
-//    @Override
-//    public void paga(double importo) {
-//        System.out.println("Pagamento di " + importo + " euro con bancomat effettuato con successo.");
-//    }
-//}
-
-
 import exception.PagamentoFallitoException;
 
 public class PagamentoBancomatStrategy implements IPagamentoStrategy {

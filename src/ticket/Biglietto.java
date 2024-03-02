@@ -23,6 +23,8 @@ public interface Biglietto {
 
     // Restituisce il costo del biglietto
     double getCosto();
+
+    String getId();
 }
 
 

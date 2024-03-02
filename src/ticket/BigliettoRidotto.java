@@ -7,13 +7,20 @@ import domain.Ruolo;
 import domain.Utente;
 import singleton.*;
 
-public class BigliettoRidotto implements Biglietto {
+import java.io.Serializable;
+import java.util.UUID;
+
+public class BigliettoRidotto implements Biglietto, Serializable {
+    private static final long serialVersionUID = 1L;
+
+    private final String id;
     private Spettacolo spettacolo;
     private Utente acquirente;
     private double costo;
     private boolean isValid;
 
     public BigliettoRidotto(Spettacolo spettacolo, Utente acquirente) {
+        this.id = UUID.randomUUID().toString(); // Genera un ID univoco
         this.spettacolo = spettacolo;
         this.acquirente = acquirente;
         this.costo = Cinema.getInstance().getGestorePrezzi().calcolaPrezzoFinale(spettacolo, "ridotto");
@@ -53,5 +60,10 @@ public class BigliettoRidotto implements Biglietto {
     @Override
     public double getCosto() {
         return this.costo;
+    }
+
+    @Override
+    public String getId() {
+        return id;
     }
 }
