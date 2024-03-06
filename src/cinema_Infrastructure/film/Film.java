@@ -1,4 +1,4 @@
-package cinema_Infrastructure;
+package cinema_Infrastructure.film;
 
 import java.io.Serializable;
 
@@ -7,21 +7,30 @@ public class Film implements Serializable {
 
     private String titolo;
     private int durata;
+    private long id; // Identificativo univoco del film.
 
     // Costruttore che accetta solo il titolo del film.
-
-    public Film(String titolo){
-        this.titolo = titolo;
-    }
-
-    // Costruttore che accetta sia il titolo sia la durata del film.
 
     public Film(String titolo, int durata){
         this.titolo = titolo;
         this.durata = durata;
     }
 
+    // Costruttore che accetta sia il titolo sia la durata del film.
+
+    public Film(String titolo, int durata, long id){
+        this.titolo = titolo;
+        this.durata = durata;
+        this.id = id;
+    }
+
     // Metodo getter per ottenere il titolo del film.
+
+    public long getId(){return id;}
+
+    public void setId(long id){
+        this.id = id;
+    }
 
     public String getTitolo() {
         return titolo;

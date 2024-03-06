@@ -1,38 +1,28 @@
 package domain;
 import admin_interfaces.Command;
+import exception.film.FilmGiaPresenteException;
 
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Amministratore extends Persona {
-    private List<Command> comandi;
+
+   // private List<Command> comandi;
+
+    private Command command;
 
     public Amministratore(String nome, String cognome, Ruolo ruolo) {
         super(nome, cognome, ruolo);
-        this.comandi = new ArrayList<>();
+        //this.comandi = new ArrayList<>();
     }
 
-    public void aggiungiComando(Command comando) {
-        this.comandi.add(comando);
+    public void setCommand(Command command){
+        this.command = command;
     }
 
-    public void eseguiComando(int indiceComando) {
-        if (indiceComando >= 0 && indiceComando < comandi.size()) {
-            comandi.get(indiceComando).execute();
-        } else {
-            System.out.println("Indice comando non valido.");
-        }
-    }
-
-    public void eseguiComando(Command comando) {
+    public void eseguiComando(Command comando)  {
         comando.execute();
     }
 
-    // Se vuoi eseguire tutti i comandi in sequenza
-    public void eseguiTuttiComandi() {
-        for (Command comando : comandi) {
-            comando.execute();
-        }
-    }
 }

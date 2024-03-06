@@ -1,5 +1,5 @@
-package memento;
-
-public interface AcquistoMemento {
-    // Marker interface.
-}
+//package memento;
+//
+//public interface AcquistoMemento {
+//    // Marker interface.
+//}

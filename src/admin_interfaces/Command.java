@@ -1,5 +1,7 @@
 package admin_interfaces;
 
+import exception.film.FilmGiaPresenteException;
+
 /**
  * Interfaccia Command definisce l'operazione di esecuzione per tutti i comandi concreti.
  * Questa interfaccia è il nucleo del pattern Command, consentendo di incapsulare una richiesta come un oggetto.

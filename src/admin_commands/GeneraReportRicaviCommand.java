@@ -20,16 +20,15 @@ package admin_commands;
 //    }
 //}
 
-import admin_interfaces.Command;
-import cinema_Infrastructure.Spettacolo;
-import singleton.Cinema;
-
-public class GeneraReportRicaviCommand implements Command {
-
-    @Override
-    public void execute() {
-        // Chiama direttamente il metodo stampaReportRicavi sul singleton di Cinema
-        // che a sua volta invoca il metodo stampaReportRicavi su GestoreRicavi
-        Cinema.getInstance().getGestoreRicavi().stampaReportRicavi();
-    }
-}
+//import admin_interfaces.Command;
+//import singleton.Cinema;
+//
+//public class GeneraReportRicaviCommand implements Command {
+//
+//    @Override
+//    public void execute() {
+//        // Chiama direttamente il metodo stampaReportRicavi sul singleton di Cinema
+//        // che a sua volta invoca il metodo stampaReportRicavi su GestoreRicavi
+//        Cinema.getInstance().getGestoreRicavi().stampaReportRicavi();
+//    }
+//}

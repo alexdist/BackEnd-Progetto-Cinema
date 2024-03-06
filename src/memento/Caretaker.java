@@ -1,14 +1,14 @@
 package memento;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
-
-import Serializzazione.GestoreRicaviSerializer;
-import singleton.Cinema;
-import ticket_pricing.GestoreRicavi;
+//import java.io.Serializable;
+//import java.time.LocalDateTime;
+//import java.util.ArrayList;
+//import java.util.List;
+//import java.util.Stack;
+//
+//import Serializzazione.GestoreRicaviSerializer;
+//import singleton.Cinema;
+//import ticket_pricing.GestoreRicavi;
 
 //public class Caretaker implements Serializable {
 //    private static final long serialVersionUID = 1L;
@@ -103,56 +103,56 @@ import ticket_pricing.GestoreRicavi;
 //    }
 //}
 
-public class Caretaker implements Serializable {
-    private static final long serialVersionUID = 1L;
-    // Lista per memorizzare gli oggetti Memento (acquisti).
-    private final List<AcquistoMemento> mementoList;
-    // Riferimento a GestoreRicavi per la gestione dei ricavi, inizializzato su richiesta.
-    private GestoreRicavi gestoreRicavi;
-
-    public Caretaker() {
-        this.mementoList = new ArrayList<>(); // Modifica qui
-        this.gestoreRicavi = null;
-    }
-
-    // Aggiunge un memento (acquisto) alla lista.
-    public void addMemento(AcquistoMemento memento) {
-        mementoList.add(memento); // Modifica qui
-    }
-
-    // Metodo getter per ottenere la lista di mementi
-    public List<AcquistoMemento> getMementos() {
-        return mementoList; // Modifica qui
-    }
-
-    // Verifica se ci sono mementi (acquisti) memorizzati.
-    public boolean hasMemento() {
-        return !mementoList.isEmpty(); // Modifica qui
-    }
-
-    // Annulla l'ultimo acquisto se possibile, aggiornando la gestione dei ricavi.
-    public AcquistoMemento undoLastAcquisto() {
-        if (canUndo()) {
-            // Ottiene e rimuove l'ultimo elemento dalla lista
-            Acquisto lastAcquisto = (Acquisto) mementoList.remove(mementoList.size() - 1); // Modifica qui
-            Cinema.getInstance().getGestoreRicavi().annullaVenditaBiglietto(lastAcquisto.getBiglietto());
-            return lastAcquisto;
-        }
-        return null;
-    }
-
-    public boolean canUndo() {
-        if (!mementoList.isEmpty()) {
-            // Ottiene l'ultimo acquisto dalla lista senza rimuoverlo.
-            Acquisto lastAcquisto = (Acquisto) mementoList.get(mementoList.size() - 1);
-            LocalDateTime now = LocalDateTime.now();
-            LocalDateTime acquistoTime = lastAcquisto.getTimestampAcquisto();
-            // Verifica se l'acquisto è stato fatto meno di 10 minuti fa.
-            return now.minusMinutes(10).isBefore(acquistoTime);
-        }
-        return false;
-    }
-
-
-    // Il resto del codice rimane invariato...
-}
+//public class Caretaker implements Serializable {
+//    private static final long serialVersionUID = 1L;
+//    // Lista per memorizzare gli oggetti Memento (acquisti).
+//    private final List<AcquistoMemento> mementoList;
+//    // Riferimento a GestoreRicavi per la gestione dei ricavi, inizializzato su richiesta.
+//    private GestoreRicavi gestoreRicavi;
+//
+//    public Caretaker() {
+//        this.mementoList = new ArrayList<>(); // Modifica qui
+//        this.gestoreRicavi = null;
+//    }
+//
+//    // Aggiunge un memento (acquisto) alla lista.
+//    public void addMemento(AcquistoMemento memento) {
+//        mementoList.add(memento); // Modifica qui
+//    }
+//
+//    // Metodo getter per ottenere la lista di mementi
+//    public List<AcquistoMemento> getMementos() {
+//        return mementoList; // Modifica qui
+//    }
+//
+//    // Verifica se ci sono mementi (acquisti) memorizzati.
+//    public boolean hasMemento() {
+//        return !mementoList.isEmpty(); // Modifica qui
+//    }
+//
+//    // Annulla l'ultimo acquisto se possibile, aggiornando la gestione dei ricavi.
+//    public AcquistoMemento undoLastAcquisto() {
+//        if (canUndo()) {
+//            // Ottiene e rimuove l'ultimo elemento dalla lista
+//            Acquisto lastAcquisto = (Acquisto) mementoList.remove(mementoList.size() - 1); // Modifica qui
+//            Cinema.getInstance().getGestoreRicavi().annullaVenditaBiglietto(lastAcquisto.getBiglietto());
+//            return lastAcquisto;
+//        }
+//        return null;
+//    }
+//
+//    public boolean canUndo() {
+//        if (!mementoList.isEmpty()) {
+//            // Ottiene l'ultimo acquisto dalla lista senza rimuoverlo.
+//            Acquisto lastAcquisto = (Acquisto) mementoList.get(mementoList.size() - 1);
+//            LocalDateTime now = LocalDateTime.now();
+//            LocalDateTime acquistoTime = lastAcquisto.getTimestampAcquisto();
+//            // Verifica se l'acquisto è stato fatto meno di 10 minuti fa.
+//            return now.minusMinutes(10).isBefore(acquistoTime);
+//        }
+//        return false;
+//    }
+//
+//
+//    // Il resto del codice rimane invariato...
+//}

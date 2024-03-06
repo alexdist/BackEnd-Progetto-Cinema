@@ -1,13 +1,11 @@
-package payment_strategy;
-
-
-
+//package payment_strategy;
+//
+//
+//
+//
+//
+//import exception.PagamentoFallitoException;
+//
 //public interface IPagamentoStrategy {
-//    void paga(double importo);
+//    void paga(double importo) throws PagamentoFallitoException;
 //}
-
-import exception.PagamentoFallitoException;
-
-public interface IPagamentoStrategy {
-    void paga(double importo) throws PagamentoFallitoException;
-}
