@@ -2,7 +2,7 @@ package cinema_Infrastructure.sala;
 
 import java.io.Serializable;
 
-public class Sala implements Serializable {
+public class Sala implements ISala,Serializable {
     private static final long serialVersionUID = 1L; // Aggiungi un serialVersionUID
     private final int numeroSala;
     private final int capacita; // Numero totale dei posti disponibili nella sala

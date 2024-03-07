@@ -8,7 +8,7 @@ import java.util.List;
 
 public class ValidatoreFilm {
     // Metodo statico per validare i parametri di un film, incluso il controllo sul titolo
-    public static void validaParametri(Film film) throws TitoloVuotoException, DurataFilmNonValidaException {
+    public static void validaParametri(IFilm film) throws TitoloVuotoException, DurataFilmNonValidaException {
         if (film == null) {
             throw new IllegalArgumentException("Il film non può essere null");
         }
@@ -21,9 +21,10 @@ public class ValidatoreFilm {
     }
 
     // Metodo statico per controllare se il film è già presente
-    public static void controllaSeFilmEsiste(List<Film> filmInProgrammazione, Film film) throws FilmGiaPresenteException {
+    public static void controllaSeFilmEsiste(List<IFilm> filmInProgrammazione, IFilm film) throws FilmGiaPresenteException {
         if (filmInProgrammazione.stream().anyMatch(f -> f.getTitolo().equalsIgnoreCase(film.getTitolo()))) {
             throw new FilmGiaPresenteException("Film \"" + film.getTitolo() + "\" è già presente.");
         }
     }
 }
+
