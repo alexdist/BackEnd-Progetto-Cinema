@@ -18,6 +18,11 @@ public class AggiungiFilm implements IAggiungiFilm {
         this.generatoreID = generatoreID;
     }
 
+    public AggiungiFilm(List<IFilm> filmInProgrammazione) {
+        this.filmInProgrammazione = filmInProgrammazione;
+
+    }
+
     @Override
     public void aggiungiFilm(IFilm film) throws FilmGiaPresenteException, TitoloVuotoException, DurataFilmNonValidaException {
         // Assumi che ValidatoreFilm sia stato aggiornato per lavorare con IFilm

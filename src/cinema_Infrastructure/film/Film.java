@@ -18,13 +18,7 @@ public class Film implements IFilm, Serializable {
         this.genere = genere;
     }
 
-//    // Costruttore che accetta sia il titolo sia la durata del film.
-//
-//    public Film(String titolo, int durata, long id){
-//        this.titolo = titolo;
-//        this.durata = durata;
-//        this.id = id;
-//    }
+
 
     // Metodo getter per ottenere il titolo del film.
 
