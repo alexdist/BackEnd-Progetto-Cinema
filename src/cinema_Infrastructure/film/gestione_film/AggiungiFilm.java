@@ -33,7 +33,7 @@ public class AggiungiFilm implements IAggiungiFilm {
         long id = generatoreID.generaProssimoId();
         film.setId(id);
         filmInProgrammazione.add(film);
-        System.out.println("Film \"" + film.getTitolo() + "\" aggiunto con successo con ID: " + id);
+        System.out.println("Film \"" + film.getTitolo() + "\" aggiunto con successo");
     }
 
     public List<IFilm> getFilm() {

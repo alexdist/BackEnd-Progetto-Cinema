@@ -1,4 +1,6 @@
-package ticket_pricing;
+package ticket_pricing.strategy;
+
+import ticket_pricing.strategy.IPrezzoStrategy;
 
 public class Context {
 

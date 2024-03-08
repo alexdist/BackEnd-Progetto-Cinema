@@ -16,6 +16,7 @@ public class Film implements IFilm, Serializable {
         this.titolo = titolo;
         this.durata = durata;
         this.genere = genere;
+
     }
 
 
@@ -27,6 +28,8 @@ public class Film implements IFilm, Serializable {
     public void setId(long id){
         this.id = id;
     }
+
+
 
     public String getTitolo() {
         return titolo;

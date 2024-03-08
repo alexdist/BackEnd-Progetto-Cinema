@@ -1,14 +1,12 @@
-//package payment_strategy;
-//
-//import exception.PagamentoFallitoException;
-//
-//public class PagamentoContantiStrategy implements IPagamentoStrategy {
-//    @Override
-//    public void paga(double importo) throws PagamentoFallitoException {
-//        // Simula una condizione di fallimento
-//        if (importo > 500) { // Esempio: limite di sicurezza per pagamenti in contanti
-//            throw new PagamentoFallitoException("Pagamento in contanti fallito per importo eccessivo.");
-//        }
-//        System.out.println("Pagamento di " + importo + " euro in contanti effettuato con successo.");
-//    }
-//}
+package payment_strategy;
+
+import exception.PagamentoFallitoException;
+
+// Concrete Strategy 1
+public class PagamentoContantiStrategy implements IMetodoPagamentoStrategy {
+    @Override
+    public boolean paga(double importo) {
+        System.out.println("Pagamento di " + importo + " € effettuato in contanti.");
+        return true;
+    }
+}

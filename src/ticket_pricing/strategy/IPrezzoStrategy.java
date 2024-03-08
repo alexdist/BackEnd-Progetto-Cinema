@@ -1,4 +1,4 @@
-package ticket_pricing;
+package ticket_pricing.strategy;
 
 public interface IPrezzoStrategy {
 

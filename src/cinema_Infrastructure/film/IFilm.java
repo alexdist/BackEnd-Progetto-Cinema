@@ -5,7 +5,6 @@ public interface IFilm {
     // Metodo getter per ottenere l'ID del film
     long getId();
 
-    // Metodo setter per impostare l'ID del film
     void setId(long id);
 
     // Metodo getter per ottenere il titolo del film
