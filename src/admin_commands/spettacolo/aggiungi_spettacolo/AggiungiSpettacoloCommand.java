@@ -3,8 +3,8 @@ package admin_commands.spettacolo.aggiungi_spettacolo;
 import admin_interfaces.ICommand;
 import cinema_Infrastructure.spettacolo.ISpettacolo;
 import cinema_Infrastructure.spettacolo.gestione_spettacolo.IAggiungiSpettacolo;
-import exception.FilmNonValidoException;
-import exception.SalaNonValidaException;
+import exception.film.FilmNonValidoException;
+import exception.sala.SalaNonValidaException;
 import exception.spettacolo.SovrapposizioneSpettacoloException;
 
 public class AggiungiSpettacoloCommand implements ICommand {

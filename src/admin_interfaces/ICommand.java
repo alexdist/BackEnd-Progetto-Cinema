@@ -1,7 +1,7 @@
 package admin_interfaces;
 
-import exception.FilmNonValidoException;
-import exception.SalaNonValidaException;
+import exception.film.FilmNonValidoException;
+import exception.sala.SalaNonValidaException;
 import exception.spettacolo.SovrapposizioneSpettacoloException;
 import exception.film.DurataFilmNonValidaException;
 import exception.film.FilmGiaPresenteException;

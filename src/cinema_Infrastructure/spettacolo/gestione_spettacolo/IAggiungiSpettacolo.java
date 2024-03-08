@@ -1,8 +1,8 @@
 package cinema_Infrastructure.spettacolo.gestione_spettacolo;
 
 import cinema_Infrastructure.spettacolo.ISpettacolo;
-import exception.FilmNonValidoException;
-import exception.SalaNonValidaException;
+import exception.film.FilmNonValidoException;
+import exception.sala.SalaNonValidaException;
 import exception.spettacolo.SovrapposizioneSpettacoloException;
 
 import java.util.List;

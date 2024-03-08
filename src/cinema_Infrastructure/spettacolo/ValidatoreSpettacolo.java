@@ -1,7 +1,7 @@
 package cinema_Infrastructure.spettacolo;
 
-import exception.FilmNonValidoException;
-import exception.SalaNonValidaException;
+import exception.film.FilmNonValidoException;
+import exception.sala.SalaNonValidaException;
 import exception.spettacolo.SovrapposizioneSpettacoloException;
 
 import java.time.LocalDateTime;
