@@ -1,4 +1,4 @@
-package exception;
+package exception.spettacolo;
 
 public class SovrapposizioneSpettacoloException extends Exception {
     public SovrapposizioneSpettacoloException(String message) {

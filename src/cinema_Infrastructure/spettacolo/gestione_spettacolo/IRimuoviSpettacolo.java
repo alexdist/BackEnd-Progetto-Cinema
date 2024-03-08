@@ -1,7 +1,6 @@
 package cinema_Infrastructure.spettacolo.gestione_spettacolo;
 
-import exception.SpettacoloNonTrovatoException;
-import exception.sala.SalaNonTrovataException;
+import exception.spettacolo.SpettacoloNonTrovatoException;
 
 public interface IRimuoviSpettacolo {
 

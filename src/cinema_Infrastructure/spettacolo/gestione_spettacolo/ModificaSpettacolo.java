@@ -3,8 +3,7 @@ package cinema_Infrastructure.spettacolo.gestione_spettacolo;
 import cinema_Infrastructure.film.IFilm;
 import cinema_Infrastructure.sala.ISala;
 import cinema_Infrastructure.spettacolo.ISpettacolo;
-import cinema_Infrastructure.spettacolo.gestione_spettacolo.IModificaSpettacolo;
-import exception.SpettacoloNonTrovatoException;
+import exception.spettacolo.SpettacoloNonTrovatoException;
 
 import java.time.LocalDateTime;
 import java.util.List;

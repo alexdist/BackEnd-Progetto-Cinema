@@ -1,8 +1,7 @@
 package cinema_Infrastructure.spettacolo.gestione_spettacolo;
 
 import cinema_Infrastructure.spettacolo.ISpettacolo;
-import cinema_Infrastructure.spettacolo.gestione_spettacolo.IRimuoviSpettacolo;
-import exception.SpettacoloNonTrovatoException;
+import exception.spettacolo.SpettacoloNonTrovatoException;
 
 import java.util.List;
 

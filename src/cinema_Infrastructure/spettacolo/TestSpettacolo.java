@@ -5,8 +5,10 @@ import cinema_Infrastructure.film.IFilm;
 import cinema_Infrastructure.sala.ISala;
 import cinema_Infrastructure.sala.Sala;
 import cinema_Infrastructure.spettacolo.gestione_spettacolo.*;
-import exception.SovrapposizioneSpettacoloException;
-import exception.SpettacoloNonTrovatoException;
+import exception.FilmNonValidoException;
+import exception.SalaNonValidaException;
+import exception.spettacolo.SovrapposizioneSpettacoloException;
+import exception.spettacolo.SpettacoloNonTrovatoException;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -54,6 +56,10 @@ public class TestSpettacolo {
             System.out.println("Genere: " + film1.getGenere());
         } catch (SovrapposizioneSpettacoloException e) {
             System.out.println(e.getMessage());
+        } catch (FilmNonValidoException e) {
+            throw new RuntimeException(e);
+        } catch (SalaNonValidaException e) {
+            throw new RuntimeException(e);
         }
 
         try {
@@ -62,6 +68,10 @@ public class TestSpettacolo {
             System.out.println("Genere: " + film2.getGenere());
         } catch (SovrapposizioneSpettacoloException e) {
             System.out.println(e.getMessage());
+        } catch (FilmNonValidoException e) {
+            throw new RuntimeException(e);
+        } catch (SalaNonValidaException e) {
+            throw new RuntimeException(e);
         }
 
         // Stampa di conferma

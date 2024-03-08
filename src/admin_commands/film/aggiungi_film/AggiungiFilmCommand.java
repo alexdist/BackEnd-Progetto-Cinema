@@ -2,7 +2,7 @@ package admin_commands.film.aggiungi_film;
 
 import admin_interfaces.ICommand;
 import cinema_Infrastructure.film.Film;
-import admin_interfaces.Command;
+
 import cinema_Infrastructure.film.IFilm;
 import cinema_Infrastructure.film.ValidatoreFilm;
 import cinema_Infrastructure.film.gestione_film.AggiungiFilm;

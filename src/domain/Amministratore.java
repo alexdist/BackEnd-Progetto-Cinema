@@ -1,16 +1,16 @@
 package domain;
-import admin_interfaces.Command;
+
 import admin_interfaces.ICommand;
+import exception.FilmNonValidoException;
+import exception.SalaNonValidaException;
+import exception.spettacolo.SovrapposizioneSpettacoloException;
 import exception.film.DurataFilmNonValidaException;
 import exception.film.FilmGiaPresenteException;
 import exception.film.FilmNonTrovatoException;
 import exception.film.TitoloVuotoException;
 import exception.sala.SalaGiaEsistenteException;
 import exception.sala.SalaNonTrovataException;
-
-
-import java.util.ArrayList;
-import java.util.List;
+import exception.spettacolo.SpettacoloNonTrovatoException;
 
 public class Amministratore extends Persona {
 
@@ -25,7 +25,7 @@ public class Amministratore extends Persona {
         this.command = command;
     }
 
-    public void eseguiComando() throws FilmGiaPresenteException, DurataFilmNonValidaException, TitoloVuotoException, FilmNonTrovatoException, SalaGiaEsistenteException, SalaNonTrovataException {
+    public void eseguiComando() throws FilmGiaPresenteException, DurataFilmNonValidaException, TitoloVuotoException, FilmNonTrovatoException, SalaGiaEsistenteException, SalaNonTrovataException, SovrapposizioneSpettacoloException, FilmNonValidoException, SalaNonValidaException, SpettacoloNonTrovatoException {
         command.execute();
     }
 

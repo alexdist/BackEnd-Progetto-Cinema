@@ -3,7 +3,9 @@ package cinema_Infrastructure.spettacolo.gestione_spettacolo;
 import cinema_Infrastructure.spettacolo.IGeneratoreIDSpettacolo;
 import cinema_Infrastructure.spettacolo.ISpettacolo;
 import cinema_Infrastructure.spettacolo.ValidatoreSpettacolo;
-import exception.SovrapposizioneSpettacoloException;
+import exception.FilmNonValidoException;
+import exception.SalaNonValidaException;
+import exception.spettacolo.SovrapposizioneSpettacoloException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +20,7 @@ public class AggiungiSpettacolo implements IAggiungiSpettacolo {
     }
 
     @Override
-    public void aggiungiSpettacolo(ISpettacolo nuovoSpettacolo) throws SovrapposizioneSpettacoloException{
+    public void aggiungiSpettacolo(ISpettacolo nuovoSpettacolo) throws SovrapposizioneSpettacoloException, FilmNonValidoException, SalaNonValidaException {
         // Validazione della sovrapposizione degli spettacoli (l'implementazione della validazione rimane invariata)
         ValidatoreSpettacolo.validaSpettacolo(nuovoSpettacolo, spettacoli);
 
