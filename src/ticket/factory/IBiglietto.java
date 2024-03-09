@@ -1,7 +1,10 @@
 package ticket.factory;
 
+import cinema_Infrastructure.spettacolo.ISpettacolo;
 import cinema_Infrastructure.spettacolo.Spettacolo;
 import domain.Utente;
+
+import java.time.LocalDateTime;
 
 public interface IBiglietto {
     // Verifica se il biglietto è valido
@@ -19,7 +22,7 @@ public interface IBiglietto {
     String getLogoCinema();
 
     // Restituisce lo spettacolo associato al biglietto
-    Spettacolo getSpettacolo();
+    ISpettacolo getSpettacolo();
 
 
 
@@ -34,6 +37,9 @@ public interface IBiglietto {
 
 
     long getId();
+
+    // Restituisce il timestamp dell'acquisto del biglietto
+    LocalDateTime getTimestampAcquisto();
 
 
 }

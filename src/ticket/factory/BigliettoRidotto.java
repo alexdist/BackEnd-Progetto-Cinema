@@ -2,23 +2,28 @@ package ticket.factory;
 
 
 
+import cinema_Infrastructure.spettacolo.ISpettacolo;
 import cinema_Infrastructure.spettacolo.Spettacolo;
 import domain.Utente;
 import ticket.GeneratoreIDBiglietto;
 import ticket.IGeneratoreIDBiglietto;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 public class BigliettoRidotto implements IBiglietto, Serializable {
 
 
     private final long id;
-    private Spettacolo spettacolo;
+
+    private final LocalDateTime timestampAcquisto;
+    private ISpettacolo spettacolo;
     private Utente acquirente;
     private double costo;
     private boolean isValid;
 
-    public BigliettoRidotto(Spettacolo spettacolo, Utente acquirente, double costo, IGeneratoreIDBiglietto id) {
+    public BigliettoRidotto(ISpettacolo spettacolo, Utente acquirente, double costo, IGeneratoreIDBiglietto id) {
+        this.timestampAcquisto = LocalDateTime.now();
         this.id = id.generaProssimoId();
         this.spettacolo = spettacolo;
         this.acquirente = acquirente;
@@ -47,7 +52,7 @@ public class BigliettoRidotto implements IBiglietto, Serializable {
     }
 
     @Override
-    public Spettacolo getSpettacolo() {
+    public ISpettacolo getSpettacolo() {
         return this.spettacolo;
     }
 
@@ -64,5 +69,10 @@ public class BigliettoRidotto implements IBiglietto, Serializable {
     @Override
     public long getId() {
         return id;
+    }
+
+    @Override
+    public LocalDateTime getTimestampAcquisto() {
+        return timestampAcquisto;
     }
 }
