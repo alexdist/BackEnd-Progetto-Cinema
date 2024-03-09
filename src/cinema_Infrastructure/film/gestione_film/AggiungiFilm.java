@@ -1,5 +1,8 @@
 package cinema_Infrastructure.film.gestione_film;
 
+import Serializzazione.adapter.adaptee.FilmSerializer;
+import Serializzazione.adapter.adapter.FilmSerializerAdapter;
+import Serializzazione.adapter.target.IDataSerializer;
 import cinema_Infrastructure.film.IFilm;
 import cinema_Infrastructure.film.IGeneratoreIDFilm;
 import cinema_Infrastructure.film.ValidatoreFilm;
@@ -11,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 public class AggiungiFilm implements IAggiungiFilm {
     private IGeneratoreIDFilm generatoreID;
+
     private List<IFilm> filmInProgrammazione; // Usa l'interfaccia IFilm
 
     public AggiungiFilm(List<IFilm> filmInProgrammazione, IGeneratoreIDFilm generatoreID) {
@@ -35,6 +39,7 @@ public class AggiungiFilm implements IAggiungiFilm {
         filmInProgrammazione.add(film);
         System.out.println("Film \"" + film.getTitolo() + "\" aggiunto con successo");
     }
+
 
     public List<IFilm> getFilm() {
         return new ArrayList<>(filmInProgrammazione); // Restituisce una copia della lista per evitare modifiche esterne

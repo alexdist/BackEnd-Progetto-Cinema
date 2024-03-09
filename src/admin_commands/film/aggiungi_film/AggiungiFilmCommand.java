@@ -11,20 +11,18 @@ import exception.film.DurataFilmNonValidaException;
 import exception.film.FilmGiaPresenteException;
 import exception.film.TitoloVuotoException;
 
-
 public class AggiungiFilmCommand implements ICommand {
 
     private IAggiungiFilm add;
     private IFilm film;
 
-    private int state;
+    //private int state;
 
     // Costruttore della classe AggiungiFilmCommand.
 
     public AggiungiFilmCommand(IAggiungiFilm add, IFilm film) {
         this.add = add;
         this.film = film;
-
     }
 
     @Override

@@ -1,5 +1,8 @@
 package cinema_Infrastructure.film.gestione_film;
 
+import Serializzazione.adapter.adaptee.FilmSerializer;
+import Serializzazione.adapter.adapter.FilmSerializerAdapter;
+import Serializzazione.adapter.target.IDataSerializer;
 import cinema_Infrastructure.film.IFilm;
 import cinema_Infrastructure.film.gestione_film.IRimuoviFilm;
 import exception.film.FilmNonTrovatoException;
@@ -8,6 +11,7 @@ import java.util.List;
 
 public class RimuoviFilm implements IRimuoviFilm {
     private List<IFilm> filmInProgrammazione; // Usa l'interfaccia IFilm
+    private final String filePath = "filmInProgrammazione.ser";
 
     public RimuoviFilm(List<IFilm> filmInProgrammazione) {
         this.filmInProgrammazione = filmInProgrammazione;
@@ -24,10 +28,16 @@ public class RimuoviFilm implements IRimuoviFilm {
         boolean esisteFilm = esisteFilmPerId(idFilm);
         if (esisteFilm) {
             filmInProgrammazione.removeIf(film -> film.getId() == idFilm);
+            serializeFilmList(); // Chiamata dopo l'aggiunta con successo di un film
             System.out.println("Film con ID: " + idFilm + " rimosso con successo.");
         } else {
             throw new FilmNonTrovatoException("Film con ID: " + idFilm + " non trovato.");
         }
+    }
+
+    private void serializeFilmList() {
+        IDataSerializer filmSerializerAdapter = new FilmSerializerAdapter(new FilmSerializer());
+        filmSerializerAdapter.serialize(filmInProgrammazione, filePath);
     }
 }
 

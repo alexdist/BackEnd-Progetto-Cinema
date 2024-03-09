@@ -9,6 +9,7 @@ import cinema_Infrastructure.spettacolo.Spettacolo;
 import payment_strategy.IMetodoPagamentoStrategy;
 import payment_strategy.PayContext;
 
+import revenues.IRegistroBiglietti;
 import revenues.RegistroBiglietti;
 import ticket.factory.IBiglietto;
 import user_interfaces.AcquistoBiglietto;
@@ -20,10 +21,12 @@ import java.time.LocalDateTime;
 
 public class ServizioAcquistoBiglietto implements AcquistoBiglietto {
     private PayContext pay;
+    private IRegistroBiglietti registro;
 
 
-    public ServizioAcquistoBiglietto(PayContext pay) {
+    public ServizioAcquistoBiglietto(PayContext pay, IRegistroBiglietti registro) {
         this.pay = pay;
+        this.registro = registro;
     }
 
     @Override
@@ -32,7 +35,7 @@ public class ServizioAcquistoBiglietto implements AcquistoBiglietto {
 
         //if (sala.occupaPosto()) { // Verifica la disponibilità di posti prima dell'acquisto
         pay.eseguiPagamento(biglietto.getCosto());
-        RegistroBiglietti.aggiungiBiglietto(biglietto);
+        registro.aggiungiBiglietto(biglietto);
 
 
 

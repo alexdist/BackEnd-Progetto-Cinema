@@ -1,5 +1,8 @@
 package revenues;
 
+import Serializzazione.adapter.adaptee.BigliettiSerializer;
+import Serializzazione.adapter.adapter.BigliettiSerializerAdapter;
+import Serializzazione.adapter.target.IDataSerializer;
 import ticket.factory.IBiglietto;
 
 import java.time.LocalDateTime;
@@ -8,70 +11,51 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class RegistroBiglietti {
-    private static List<IBiglietto> biglietti = new ArrayList<>();
+// Implementazione concreta del registro dei biglietti
+public class RegistroBiglietti implements IRegistroBiglietti {
+    private List<IBiglietto> biglietti = new ArrayList<>();
 
-//    public RegistroBiglietti() {
-//        biglietti = new ArrayList<>();
-//    }
 
-    public static void aggiungiBiglietto(IBiglietto biglietto) {
+    public RegistroBiglietti() {
+
+    }
+
+    @Override
+    public void aggiungiBiglietto(IBiglietto biglietto) {
         biglietti.add(biglietto);
     }
 
-//    public static void reportRicaviPerSala() {
-//        Map<Integer, Double> ricaviPerSala = new HashMap<>();
-//        for (IBiglietto biglietto : biglietti) {
-//            ricaviPerSala.merge(biglietto.getSpettacolo().getSala().getNumeroSala(), biglietto.getCosto(), Double::sum);
-//        }
-//
-//        for (Map.Entry<Integer, Double> entry : ricaviPerSala.entrySet()) {
-//            System.out.println("Sala " + entry.getKey() + ": ricavi totali = " + entry.getValue() + "€");
-//        }
-//    }
-
-    public static void reportRicaviPerSala() {
-        Map<Integer, Double> ricaviPerSala = new HashMap<>();
+    @Override
+    public boolean annullaAcquisto(long idBiglietto) {
         for (IBiglietto biglietto : biglietti) {
-            int numeroSala = biglietto.getSpettacolo().getSala().getNumeroSala();
-            ricaviPerSala.merge(numeroSala, biglietto.getCosto(), Double::sum);
-        }
-
-        for (Map.Entry<Integer, Double> entry : ricaviPerSala.entrySet()) {
-            System.out.println("Sala " + entry.getKey() + ": ricavi totali = " + entry.getValue() + "€");
-        }
-    }
-
-    public static void reportAffluenzaPerSala() {
-        Map<Integer, Integer> affluenzaPerSala = new HashMap<>();
-        for (IBiglietto biglietto : biglietti) {
-            int numeroSala = biglietto.getSpettacolo().getSala().getNumeroSala();
-            affluenzaPerSala.merge(numeroSala, 1, Integer::sum); // Incrementa il conteggio per ogni biglietto
-        }
-
-        for (Map.Entry<Integer, Integer> entry : affluenzaPerSala.entrySet()) {
-            System.out.println("Sala " + entry.getKey() + ": affluenza totale = " + entry.getValue() + " persone");
-        }
-    }
-
-    public static boolean annullaAcquisto(long idBiglietto) {
-        IBiglietto bigliettoDaAnnullare = biglietti.stream()
-                .filter(b -> b.getId() == idBiglietto)
-                .findFirst()
-                .orElse(null);
-
-        if (bigliettoDaAnnullare != null) {
-            LocalDateTime tempoDiAcquisto = bigliettoDaAnnullare.getTimestampAcquisto();
-            LocalDateTime tempoLimite = tempoDiAcquisto.plusMinutes(10);
-            if (LocalDateTime.now().isBefore(tempoLimite)) {
-                biglietti.remove(bigliettoDaAnnullare);
-                return true;
+            if (biglietto.getId() == idBiglietto) {
+                LocalDateTime tempoDiAcquisto = biglietto.getTimestampAcquisto();
+                LocalDateTime tempoLimite = tempoDiAcquisto.plusMinutes(10);
+                if (LocalDateTime.now().isBefore(tempoLimite)) {
+                    biglietti.remove(biglietto);
+                    return true;
+                }
+                break;
             }
         }
         return false;
     }
 
+    @Override
     public List<IBiglietto> getBiglietti() {
-        return biglietti;
+        return new ArrayList<>(biglietti);
     }
+
+//    @Override
+//    public void salvaBiglietti(String filePath) {
+//        serializer.serialize(biglietti, filePath);
+//    }
+
+//    @Override
+//    public void caricaBiglietti(String filePath) {
+//        List<IBiglietto> loadedBiglietti = (List<IBiglietto>) serializer.deserialize(filePath);
+//        if (loadedBiglietti != null) {
+//            this.biglietti = loadedBiglietti;
+//        }
+//    }
 }

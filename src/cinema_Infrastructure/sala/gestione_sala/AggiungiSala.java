@@ -1,5 +1,6 @@
 package cinema_Infrastructure.sala.gestione_sala;
 
+//import Serializzazione.sale.SalaSerializer;
 import cinema_Infrastructure.sala.IGeneratoreIDSala;
 import cinema_Infrastructure.sala.ISala;
 import cinema_Infrastructure.sala.ValidatoreSala;
@@ -13,7 +14,7 @@ import java.util.List;
 public class AggiungiSala implements IAggiungiSala {
     private IGeneratoreIDSala generatoreID;
     private List<ISala> sale; // Usa l'interfaccia ISala
-
+    private static final String FILE_PATH = "sale.ser"; // Definisce il percorso del file
     public AggiungiSala(List<ISala> sale, IGeneratoreIDSala generatoreID) {
         this.sale = sale;
         this.generatoreID = generatoreID;
@@ -29,6 +30,8 @@ public class AggiungiSala implements IAggiungiSala {
         long id = generatoreID.generaProssimoId();
         nuovaSala.setId(id);
         sale.add(nuovaSala);
+        // Salva lo stato aggiornato delle sale su file
+      //  SalaSerializer.serializeSaleList(sale, FILE_PATH);
 
         System.out.println("Sala " + nuovaSala.getNumeroSala() + " aggiunta con successo con ID: " + id);
     }

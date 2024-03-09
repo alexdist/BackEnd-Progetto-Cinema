@@ -1,17 +1,20 @@
 package user_commands.annulla_biglietto;
 
+import revenues.IRegistroBiglietti;
 import revenues.RegistroBiglietti;
 import user_interfaces.IUserCommand;
 
 public class AnnullaBigliettoCommand implements IUserCommand {
 
     private long id;
-    public AnnullaBigliettoCommand(long id){
+    private IRegistroBiglietti annulla;
+    public AnnullaBigliettoCommand(long id, IRegistroBiglietti annulla){
         this.id = id;
+        this.annulla = annulla;
     }
 
 
     public void execute(){
-        RegistroBiglietti.annullaAcquisto(id);
+        annulla.annullaAcquisto(id);
     }
 }
