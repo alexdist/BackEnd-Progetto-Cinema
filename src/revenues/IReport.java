@@ -1,5 +1,5 @@
-package revenues;
-
-public interface IReport {
-    void generate();
-}
+//package revenues;
+//
+//public interface IReport {
+//    void generate();
+//}

@@ -4,7 +4,8 @@ package user_services;
 
 import payment_strategy.PayContext;
 
-import revenues.IRegistroBiglietti;
+//import revenues.IRegistroBiglietti;
+import revenues_observer.observable.IRegistroBiglietti;
 import ticket.factory.product.IBiglietto;
 import user_interfaces.AcquistoBiglietto;
 

@@ -1,7 +1,8 @@
 package user_commands.annulla_biglietto;
 
-import revenues.IRegistroBiglietti;
-import revenues.RegistroBiglietti;
+//import revenues.IRegistroBiglietti;
+//import revenues.RegistroBiglietti;
+import revenues_observer.observable.IRegistroBiglietti;
 import user_interfaces.IUserCommand;
 
 public class AnnullaBigliettoCommand implements IUserCommand {

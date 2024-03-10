@@ -22,11 +22,15 @@ import id_generator_factory.concrete_factories.GeneratoreIDFilmFactory;
 import payment_strategy.IMetodoPagamentoStrategy;
 import payment_strategy.PagamentoBancomatStrategy;
 import payment_strategy.PayContext;
-import revenues.IRegistroBiglietti;
-import revenues.IReport;
-import revenues.RegistroBiglietti;
-
-import revenues.RicaviPerSalaReport;
+//import revenues.IRegistroBiglietti;
+//import revenues.IReport;
+//import revenues.RegistroBiglietti;
+//
+//import revenues.RicaviPerSalaReport;
+import revenues_observer.concrete_observable.RegistroBiglietti;
+import revenues_observer.concrete_observableA.AffluenzaPerSalaReport;
+import revenues_observer.concrete_observableB.RicaviPerSalaReport;
+import revenues_observer.observable.IRegistroBiglietti;
 import ticket.factory.abstract_factory.BigliettoFactory;
 import ticket.factory.concrete_factory.BigliettoInteroFactory;
 import ticket.factory.product.IBiglietto;
@@ -70,10 +74,15 @@ public class TestGeneraReport {
         IMetodoPagamentoStrategy metodoPagamentoBancomat = new PagamentoBancomatStrategy();
         PayContext pagamentoBancomat = new PayContext(metodoPagamentoBancomat);
 
-        IRegistroBiglietti registro = new RegistroBiglietti();
+        // Creazione del registro biglietti (ConcreteObservable)
+        IRegistroBiglietti registroBiglietti = new RegistroBiglietti();
+
+        // Creazione dei report (ConcreteObservers) e registrazione al registro
+        RicaviPerSalaReport ricaviReport = new RicaviPerSalaReport(registroBiglietti);
+        AffluenzaPerSalaReport affluenzaReport = new AffluenzaPerSalaReport(registroBiglietti);
 
         // Creazione del servizio di acquisto biglietto
-        ServizioAcquistoBiglietto servizioAcquisto = new ServizioAcquistoBiglietto(pagamentoBancomat, registro);
+        ServizioAcquistoBiglietto servizioAcquisto = new ServizioAcquistoBiglietto(pagamentoBancomat, registroBiglietti);
 
         // Acquisto del biglietto
         servizioAcquisto.acquistaBiglietto(biglietto);
@@ -84,11 +93,11 @@ public class TestGeneraReport {
 
         servizioAcquisto.acquistaBiglietto(biglietto2);
 
-        IReport report = new RicaviPerSalaReport(registro.getBiglietti());
+
 
         Amministratore admin = new Amministratore("Luca","Rossi", Ruolo.AMMINISTRATORE);
 
-        ICommand generaReport = new GeneraReportRicaviCommand(report);
+        ICommand generaReport = new GeneraReportRicaviCommand(affluenzaReport);
         admin.setCommand(generaReport);
         admin.eseguiComando();
 
