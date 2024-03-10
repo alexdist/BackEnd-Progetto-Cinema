@@ -1,22 +1,25 @@
 package cinema_Infrastructure.spettacolo.gestione_spettacolo;
 
-import cinema_Infrastructure.spettacolo.IGeneratoreIDSpettacolo;
+//import cinema_Infrastructure.spettacolo.IGeneratoreIDSpettacolo;
 import cinema_Infrastructure.spettacolo.ISpettacolo;
 import cinema_Infrastructure.spettacolo.ValidatoreSpettacolo;
 import exception.film.FilmNonValidoException;
 import exception.sala.SalaNonValidaException;
 import exception.spettacolo.SovrapposizioneSpettacoloException;
+import id_generator_factory.abstract_factory.GeneratoreIDFactory;
+import id_generator_factory.product.IGeneratoreID;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class AggiungiSpettacolo implements IAggiungiSpettacolo {
 
-    private IGeneratoreIDSpettacolo generatoreID;
+    private GeneratoreIDFactory generatoreIDFactory;
     private List<ISpettacolo> spettacoli; // Usa l'interfaccia ISpettacolo anziché la classe concreta
 
-    public AggiungiSpettacolo(List<ISpettacolo> spettacoli, IGeneratoreIDSpettacolo generatoreID){
+    public AggiungiSpettacolo(List<ISpettacolo> spettacoli, GeneratoreIDFactory generatoreIDFactory){
         this.spettacoli = spettacoli;
-        this.generatoreID = generatoreID;
+        this.generatoreIDFactory = generatoreIDFactory;
     }
 
     @Override
@@ -24,6 +27,8 @@ public class AggiungiSpettacolo implements IAggiungiSpettacolo {
         // Validazione della sovrapposizione degli spettacoli (l'implementazione della validazione rimane invariata)
         ValidatoreSpettacolo.validaSpettacolo(nuovoSpettacolo, spettacoli);
 
+        // Usa la factory per ottenere un generatore di ID e genera il prossimo ID
+        IGeneratoreID generatoreID = generatoreIDFactory.creaGeneratoreID();
         // Assegna un ID univoco al nuovo spettacolo e lo aggiunge alla lista
         long id = generatoreID.generaProssimoId();
         nuovoSpettacolo.setId(id);

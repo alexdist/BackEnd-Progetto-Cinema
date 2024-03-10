@@ -1,5 +1,5 @@
-package ticket;
-
-public interface IGeneratoreIDBiglietto {
-    long generaProssimoId();
-}
+//package ticket;
+//
+//public interface IGeneratoreIDBiglietto {
+//    long generaProssimoId();
+//}

@@ -3,8 +3,10 @@ package ticket.factory;
 import cinema_Infrastructure.spettacolo.ISpettacolo;
 import cinema_Infrastructure.spettacolo.Spettacolo;
 import domain.Utente;
-import ticket.GeneratoreIDBiglietto;
-import ticket.IGeneratoreIDBiglietto;
+import id_generator_factory.abstract_factory.GeneratoreIDFactory;
+import id_generator_factory.product.IGeneratoreID;
+//import ticket.GeneratoreIDBiglietto;
+//import ticket.IGeneratoreIDBiglietto;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -21,9 +23,12 @@ public class BigliettoIntero implements IBiglietto, Serializable {
     private boolean isValid; // Indica se il biglietto è valido
 
     // Costruttore che inizializza il biglietto intero
-    public BigliettoIntero(ISpettacolo spettacolo, Utente acquirente, double costo, IGeneratoreIDBiglietto id) {
+    public BigliettoIntero(ISpettacolo spettacolo, Utente acquirente, double costo, GeneratoreIDFactory generatoreIDFactory) {
         this.timestampAcquisto = LocalDateTime.now();
-        this.id = id.generaProssimoId();
+        // Utilizza la factory per ottenere il generatore di ID specifico per i biglietti
+        IGeneratoreID generatoreID = generatoreIDFactory.creaGeneratoreID();
+        // Ora genera il prossimo ID
+        this.id = generatoreID.generaProssimoId();
         this.spettacolo = spettacolo;
         this.acquirente = acquirente;
         // Calcola il costo del biglietto intero tramite il GestorePrezzi del cinema
