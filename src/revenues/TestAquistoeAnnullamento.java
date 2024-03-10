@@ -13,9 +13,9 @@
 //import payment_strategy.PayContext;
 //import ticket.GeneratoreIDBiglietto;
 //import ticket.IGeneratoreIDBiglietto;
-//import ticket.factory.BigliettoFactory;
-//import ticket.factory.BigliettoInteroFactory;
-//import ticket.factory.IBiglietto;
+//import ticket.factory.abstract_factory.BigliettoFactory;
+//import ticket.factory.concrete_factory.BigliettoInteroFactory;
+//import ticket.factory.product.IBiglietto;
 //import user_services.ServizioAcquistoBiglietto;
 //
 //import java.time.LocalDateTime;

@@ -1,7 +1,6 @@
 package user_commands.acquisto_biglietto;
 
-import payment_strategy.IMetodoPagamentoStrategy;
-import ticket.factory.IBiglietto;
+import ticket.factory.product.IBiglietto;
 import user_interfaces.AcquistoBiglietto;
 import user_interfaces.IUserCommand;
 

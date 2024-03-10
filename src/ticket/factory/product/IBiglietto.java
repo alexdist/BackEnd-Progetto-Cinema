@@ -1,4 +1,4 @@
-package ticket.factory;
+package ticket.factory.product;
 
 import cinema_Infrastructure.spettacolo.ISpettacolo;
 import cinema_Infrastructure.spettacolo.Spettacolo;

@@ -2,22 +2,11 @@ package user_services;
 
 
 
-import cinema_Infrastructure.sala.ISala;
-import cinema_Infrastructure.sala.Sala;
-import cinema_Infrastructure.spettacolo.Spettacolo;
-
-import payment_strategy.IMetodoPagamentoStrategy;
 import payment_strategy.PayContext;
 
 import revenues.IRegistroBiglietti;
-import revenues.RegistroBiglietti;
-import ticket.factory.IBiglietto;
+import ticket.factory.product.IBiglietto;
 import user_interfaces.AcquistoBiglietto;
-
-
-
-
-import java.time.LocalDateTime;
 
 public class ServizioAcquistoBiglietto implements AcquistoBiglietto {
     private PayContext pay;

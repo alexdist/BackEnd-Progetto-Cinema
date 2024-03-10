@@ -2,7 +2,7 @@ package Serializzazione.adapter.adapter;
 
 import Serializzazione.adapter.adaptee.BigliettiSerializer;
 import Serializzazione.adapter.target.IDataSerializer;
-import ticket.factory.IBiglietto;
+import ticket.factory.product.IBiglietto;
 
 import java.util.List;
 

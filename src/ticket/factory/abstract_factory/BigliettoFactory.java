@@ -1,10 +1,10 @@
 
-package ticket.factory;
+package ticket.factory.abstract_factory;
 
 import cinema_Infrastructure.spettacolo.ISpettacolo;
-import cinema_Infrastructure.spettacolo.Spettacolo;
 import domain.Utente;
 import id_generator_factory.abstract_factory.GeneratoreIDFactory;
+import ticket.factory.product.IBiglietto;
 //import ticket.IGeneratoreIDBiglietto;
 
 //public abstract class BigliettoFactory {

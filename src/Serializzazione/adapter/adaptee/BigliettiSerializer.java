@@ -1,6 +1,6 @@
 package Serializzazione.adapter.adaptee;
 
-import ticket.factory.IBiglietto;
+import ticket.factory.product.IBiglietto;
 
 import java.io.*;
 import java.util.List;

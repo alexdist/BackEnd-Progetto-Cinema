@@ -1,15 +1,10 @@
 package revenues;
 
-import Serializzazione.adapter.adaptee.BigliettiSerializer;
-import Serializzazione.adapter.adapter.BigliettiSerializerAdapter;
-import Serializzazione.adapter.target.IDataSerializer;
-import ticket.factory.IBiglietto;
+import ticket.factory.product.IBiglietto;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 // Implementazione concreta del registro dei biglietti
 public class RegistroBiglietti implements IRegistroBiglietti {

@@ -1,6 +1,6 @@
 package revenues;
 
-import ticket.factory.IBiglietto;
+import ticket.factory.product.IBiglietto;
 
 import java.util.List;
 

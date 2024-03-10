@@ -13,10 +13,10 @@ import id_generator_factory.concrete_factories.GeneratoreIDBigliettoFactory;
 import id_generator_factory.concrete_factories.GeneratoreIDFilmFactory;
 import id_generator_factory.concrete_factories.GeneratoreIDSalaFactory;
 import id_generator_factory.concrete_factories.GeneratoreIDSpettacoloFactory;
-import ticket.factory.BigliettoFactory;
-import ticket.factory.BigliettoInteroFactory;
-import ticket.factory.BigliettoRidottoFactory;
-import ticket.factory.IBiglietto;
+import ticket.factory.abstract_factory.BigliettoFactory;
+import ticket.factory.concrete_factory.BigliettoInteroFactory;
+import ticket.factory.concrete_factory.BigliettoRidottoFactory;
+import ticket.factory.product.IBiglietto;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
