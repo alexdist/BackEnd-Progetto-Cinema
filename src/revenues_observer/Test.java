@@ -25,7 +25,8 @@ import payment_strategy.PayContext;
 import revenues_observer.concrete_observable.RegistroBiglietti;
 import revenues_observer.concrete_observableA.AffluenzaPerSalaReport;
 import revenues_observer.concrete_observableB.RicaviPerSalaReport;
-import revenues_observer.observable.IRegistroBiglietti;
+import revenues_observer.observable.AbstractRegistroBiglietti;
+//import revenues_observer.observable.IRegistroBiglietti;
 import ticket.factory.abstract_factory.BigliettoFactory;
 import ticket.factory.concrete_factory.BigliettoInteroFactory;
 import ticket.factory.product.IBiglietto;
@@ -41,7 +42,7 @@ import java.util.ArrayList;
 public class Test {
     public static void main(String[] args) throws FilmGiaPresenteException, DurataFilmNonValidaException, SpettacoloNonTrovatoException, TitoloVuotoException, SalaGiaEsistenteException, SalaNonTrovataException, FilmNonValidoException, SovrapposizioneSpettacoloException, SalaNonValidaException, FilmNonTrovatoException {
         // Creazione del registro biglietti (ConcreteObservable)
-        IRegistroBiglietti registroBiglietti = new RegistroBiglietti();
+        AbstractRegistroBiglietti registroBiglietti = new RegistroBiglietti();
 
         // Creazione dei report (ConcreteObservers) e registrazione al registro
         RicaviPerSalaReport ricaviReport = new RicaviPerSalaReport(registroBiglietti);
@@ -71,7 +72,7 @@ public class Test {
         IBiglietto bigliettoIntero1 = bigliettoInteroFactory.creaBiglietto(spettacolo1, acquirente1, 10.0);
 
         // Aggiunta di un biglietto al registro per simulare un acquisto
-        registroBiglietti.aggiungiBiglietto(bigliettoIntero1);
+        //registroBiglietti.aggiungiBiglietto(bigliettoIntero1);
 
         // Creazione e esecuzione del comando di acquisto biglietto
         IMetodoPagamentoStrategy metodoPagamentoContanti = new PagamentoContantiStrategy();
@@ -99,7 +100,11 @@ public class Test {
         // I report vengono aggiornati automaticamente grazie al pattern Observer
         // Se desideri vedere i report dopo l'annullamento, puoi generare nuovamente i report
         System.out.println("Rapporto aggiornato post-annullamento:");
-        ricaviReport.generate();
-        affluenzaReport.generate();
+        admin.setCommand(ricaviCommand);
+        admin.eseguiComando();
+        admin.setCommand(affluenzaCommand);
+        admin.eseguiComando();
+//        ricaviReport.generate();
+//        affluenzaReport.generate();
     }
 }

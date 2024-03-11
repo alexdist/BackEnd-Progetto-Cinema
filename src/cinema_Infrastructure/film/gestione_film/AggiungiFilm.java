@@ -15,19 +15,7 @@ import id_generator_factory.product.IGeneratoreID;
 import java.util.ArrayList;
 import java.util.List;
 public class AggiungiFilm implements IAggiungiFilm {
-//    private IGeneratoreIDFilm generatoreID;
-//
-//    private List<IFilm> filmInProgrammazione; // Usa l'interfaccia IFilm
-//
-//    public AggiungiFilm(List<IFilm> filmInProgrammazione, IGeneratoreIDFilm generatoreID) {
-//        this.filmInProgrammazione = filmInProgrammazione;
-//        this.generatoreID = generatoreID;
-//    }
-//
-//    public AggiungiFilm(List<IFilm> filmInProgrammazione) {
-//        this.filmInProgrammazione = filmInProgrammazione;
-//
-//    }
+
 
     private GeneratoreIDFactory generatoreIDFactory;
     private List<IFilm> filmInProgrammazione; // Usa l'interfaccia IFilm
@@ -38,18 +26,6 @@ public class AggiungiFilm implements IAggiungiFilm {
         this.generatoreIDFactory = generatoreIDFactory;
     }
 
-//    @Override
-//    public void aggiungiFilm(IFilm film) throws FilmGiaPresenteException, TitoloVuotoException, DurataFilmNonValidaException {
-//        // Assumi che ValidatoreFilm sia stato aggiornato per lavorare con IFilm
-//        ValidatoreFilm.validaParametri(film);
-//        ValidatoreFilm.controllaSeFilmEsiste(filmInProgrammazione, film);
-//
-//        // Dopo aver superato le validazioni, genera un ID e aggiunge il film
-//        long id = generatoreID.generaProssimoId();
-//        film.setId(id);
-//        filmInProgrammazione.add(film);
-//        System.out.println("Film \"" + film.getTitolo() + "\" aggiunto con successo");
-//    }
 
     @Override
     public void aggiungiFilm(IFilm film) throws FilmGiaPresenteException, TitoloVuotoException, DurataFilmNonValidaException {

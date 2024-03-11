@@ -5,16 +5,17 @@ package user_services;
 import payment_strategy.PayContext;
 
 //import revenues.IRegistroBiglietti;
-import revenues_observer.observable.IRegistroBiglietti;
+import revenues_observer.observable.AbstractRegistroBiglietti;
+//import revenues_observer.observable.IRegistroBiglietti;
 import ticket.factory.product.IBiglietto;
 import user_interfaces.AcquistoBiglietto;
 
 public class ServizioAcquistoBiglietto implements AcquistoBiglietto {
     private PayContext pay;
-    private IRegistroBiglietti registro;
+    private AbstractRegistroBiglietti registro;
 
 
-    public ServizioAcquistoBiglietto(PayContext pay, IRegistroBiglietti registro) {
+    public ServizioAcquistoBiglietto(PayContext pay, AbstractRegistroBiglietti registro) {
         this.pay = pay;
         this.registro = registro;
     }

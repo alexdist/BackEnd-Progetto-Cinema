@@ -35,10 +35,7 @@ public class RimuoviFilm implements IRimuoviFilm {
         }
     }
 
-//    private void serializeFilmList() {
-//        IDataSerializer filmSerializerAdapter = new FilmSerializerAdapter(new FilmSerializer());
-//        filmSerializerAdapter.serialize(filmInProgrammazione, filePath);
-//    }
+
 }
 
 

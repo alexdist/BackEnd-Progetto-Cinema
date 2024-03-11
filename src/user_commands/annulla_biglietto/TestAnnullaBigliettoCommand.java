@@ -29,7 +29,8 @@ import payment_strategy.PayContext;
 import revenues_observer.concrete_observable.RegistroBiglietti;
 import revenues_observer.concrete_observableA.AffluenzaPerSalaReport;
 import revenues_observer.concrete_observableB.RicaviPerSalaReport;
-import revenues_observer.observable.IRegistroBiglietti;
+import revenues_observer.observable.AbstractRegistroBiglietti;
+//import revenues_observer.observable.IRegistroBiglietti;
 import ticket.factory.abstract_factory.BigliettoFactory;
 import ticket.factory.concrete_factory.BigliettoInteroFactory;
 import ticket.factory.product.IBiglietto;
@@ -81,7 +82,7 @@ public class TestAnnullaBigliettoCommand {
         PayContext pagamentoContanti = new PayContext(metodoPagamentoContanti);
 
         // Creazione del registro biglietti (ConcreteObservable)
-        IRegistroBiglietti registroBiglietti = new RegistroBiglietti();
+        AbstractRegistroBiglietti registroBiglietti = new RegistroBiglietti();
 
         // Creazione dei report (ConcreteObservers) e registrazione al registro
         RicaviPerSalaReport ricaviReport = new RicaviPerSalaReport(registroBiglietti);
