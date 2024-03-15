@@ -1,7 +1,12 @@
 package id_generator_factory.concrete_product;
 
+import Serializzazione.adapter.adaptee.SalaSerializer;
+import Serializzazione.adapter.adapter.SalaSerializerAdapter;
+import Serializzazione.adapter.target.IDataSerializer;
+import cinema_Infrastructure.sala.ISala;
 import id_generator_factory.product.IGeneratoreID;
 
+import java.util.List;
 public class GeneratoreIDSala implements IGeneratoreID {
     private static GeneratoreIDSala istanza; // Modificato per usare il tipo corretto
     private long ultimoIdAssegnato;
@@ -27,4 +32,5 @@ public class GeneratoreIDSala implements IGeneratoreID {
     public synchronized void reset() {
         ultimoIdAssegnato = -1;
     }
+
 }

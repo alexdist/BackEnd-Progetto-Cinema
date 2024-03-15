@@ -9,17 +9,19 @@ import exception.sala.NumeroSalaNegativoException;
 import exception.sala.SalaGiaEsistenteException;
 import id_generator_factory.abstract_factory.GeneratoreIDFactory;
 import id_generator_factory.product.IGeneratoreID;
+import prova_id_PERSISTENTE.IGeneratoreIDPersistente;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class AggiungiSala implements IAggiungiSala {
-    private GeneratoreIDFactory generatoreIDFactory;
+   // private GeneratoreIDFactory generatoreIDFactory;
+    IGeneratoreIDPersistente generatoreID;
     private List<ISala> sale; // Usa l'interfaccia ISala
     private static final String FILE_PATH = "sale.ser"; // Definisce il percorso del file
-    public AggiungiSala(List<ISala> sale, GeneratoreIDFactory generatoreIDFactory) {
+    public AggiungiSala(List<ISala> sale, IGeneratoreIDPersistente generatoreID) {
         this.sale = sale;
-        this.generatoreIDFactory = generatoreIDFactory;
+        this.generatoreID = generatoreID;
     }
 
     @Override
@@ -29,7 +31,8 @@ public class AggiungiSala implements IAggiungiSala {
         ValidatoreSala.validaUnicitaSala(sale, nuovaSala.getNumeroSala());
 
         // Usa la factory per ottenere un generatore di ID e genera il prossimo ID
-        IGeneratoreID generatoreID = generatoreIDFactory.creaGeneratoreID();
+       // IGeneratoreID generatoreID = generatoreIDFactory.creaGeneratoreID();
+
         // Assegnazione ID e aggiunta della sala alla lista
         long id = generatoreID.generaProssimoId();
         nuovaSala.setId(id);
