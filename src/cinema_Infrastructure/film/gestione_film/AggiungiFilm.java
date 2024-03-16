@@ -11,19 +11,22 @@ import exception.film.DurataFilmNonValidaException;
 import exception.film.TitoloVuotoException;
 import id_generator_factory.abstract_factory.GeneratoreIDFactory;
 import id_generator_factory.product.IGeneratoreID;
+import prova_id_PERSISTENTE.IGeneratoreIDPersistente;
 
 import java.util.ArrayList;
 import java.util.List;
 public class AggiungiFilm implements IAggiungiFilm {
 
 
-    private GeneratoreIDFactory generatoreIDFactory;
+   // private GeneratoreIDFactory generatoreIDFactory;
+   IGeneratoreIDPersistente generatoreID;
     private List<IFilm> filmInProgrammazione; // Usa l'interfaccia IFilm
+    private static final String FILE_PATH = "film.ser"; // Definisce il percorso del file
 
     // Il costruttore ora accetta una factory per i generatori di ID
-    public AggiungiFilm(List<IFilm> filmInProgrammazione, GeneratoreIDFactory generatoreIDFactory) {
+    public AggiungiFilm(List<IFilm> filmInProgrammazione, IGeneratoreIDPersistente generatoreID) {
         this.filmInProgrammazione = filmInProgrammazione;
-        this.generatoreIDFactory = generatoreIDFactory;
+        this.generatoreID = generatoreID;
     }
 
 
@@ -34,7 +37,7 @@ public class AggiungiFilm implements IAggiungiFilm {
         ValidatoreFilm.controllaSeFilmEsiste(filmInProgrammazione, film);
 
         // Usa la factory per ottenere un generatore di ID e genera il prossimo ID
-        IGeneratoreID generatoreID = generatoreIDFactory.creaGeneratoreID();
+       // IGeneratoreID generatoreID = generatoreIDFactory.creaGeneratoreID();
         long id = generatoreID.generaProssimoId();
         film.setId(id);
         filmInProgrammazione.add(film);

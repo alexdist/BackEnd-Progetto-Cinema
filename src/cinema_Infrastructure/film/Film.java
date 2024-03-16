@@ -61,12 +61,12 @@ public class Film implements IFilm, Serializable {
 
     // Metodo toString() sovrascritto per fornire una rappresentazione in stringa dell'oggetto Film.
 
-    @Override
-    public String toString() {
-        return "Film{" +
-                "titolo='" + titolo + '\'' +
-                ", durata=" + durata +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Film{" +
+//                "titolo='" + titolo + '\'' +
+//                ", durata=" + durata +
+//                '}';
+//    }
 }
 
