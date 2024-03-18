@@ -2,6 +2,7 @@ package cinema_Infrastructure.spettacolo;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Objects;
 
 import cinema_Infrastructure.film.Film;
@@ -65,6 +66,15 @@ public class Spettacolo implements ISpettacolo, Serializable {
     @Override
     public void setOrarioProiezione(LocalDateTime orarioProiezione) {
         this.orarioProiezione = orarioProiezione;
+    }
+
+    @Override
+    public String toString() {
+        String nomeFilm = film.getTitolo(); // Assumendo che IFilm abbia un metodo getNome()
+        int nomeSala = sala.getNumeroSala(); // Assumendo che ISala abbia un metodo getNome()
+        String dataFormato = orarioProiezione.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
+
+        return "Spettacolo " + nomeFilm + ", Sala: " + nomeSala + ", " + dataFormato;
     }
 }
 
