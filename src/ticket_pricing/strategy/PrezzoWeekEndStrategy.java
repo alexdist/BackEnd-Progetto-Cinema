@@ -1,6 +1,7 @@
 package ticket_pricing.strategy;
 
 import ticket_pricing.IPrezziBiglietto;
+import ticket_pricing.PrezziBiglietto;
 import ticket_pricing.strategy.IPrezzoStrategy;
 
 public class PrezzoWeekEndStrategy implements IPrezzoStrategy {
@@ -11,6 +12,11 @@ public class PrezzoWeekEndStrategy implements IPrezzoStrategy {
     public PrezzoWeekEndStrategy(IPrezziBiglietto prezziBiglietto, double aumentoPercentuale) {
         this.prezziBiglietto = prezziBiglietto;
         this.aumentoPercentuale = aumentoPercentuale;
+    }
+
+    public PrezzoWeekEndStrategy(IPrezziBiglietto prezziBiglietto) {
+        this.prezziBiglietto = prezziBiglietto;
+        this.aumentoPercentuale = prezziBiglietto.getSovrapprezzo();
     }
 
     @Override

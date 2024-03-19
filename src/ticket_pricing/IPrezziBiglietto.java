@@ -9,4 +9,8 @@ public interface IPrezziBiglietto {
     double getPrezzoRidotto();
 
     void setPrezzoRidotto(double prezzoRidotto);
+
+    void setSovrapprezzo(double sovrapprezzo);
+
+    double getSovrapprezzo();
 }

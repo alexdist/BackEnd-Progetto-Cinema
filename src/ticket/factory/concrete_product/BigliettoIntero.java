@@ -4,6 +4,7 @@ import cinema_Infrastructure.spettacolo.ISpettacolo;
 import domain.Utente;
 import id_generator_factory.abstract_factory.GeneratoreIDFactory;
 import id_generator_factory.product.IGeneratoreID;
+import prova_id_PERSISTENTE.IGeneratoreIDPersistente;
 import ticket.factory.product.IBiglietto;
 //import ticket.GeneratoreIDBiglietto;
 //import ticket.IGeneratoreIDBiglietto;
@@ -23,10 +24,10 @@ public class BigliettoIntero implements IBiglietto, Serializable {
     private boolean isValid; // Indica se il biglietto è valido
 
     // Costruttore che inizializza il biglietto intero
-    public BigliettoIntero(ISpettacolo spettacolo, Utente acquirente, double costo, GeneratoreIDFactory generatoreIDFactory) {
+    public BigliettoIntero(ISpettacolo spettacolo, Utente acquirente, double costo, IGeneratoreIDPersistente generatoreID) {
         this.timestampAcquisto = LocalDateTime.now();
         // Utilizza la factory per ottenere il generatore di ID specifico per i biglietti
-        IGeneratoreID generatoreID = generatoreIDFactory.creaGeneratoreID();
+       // IGeneratoreIDPersistente generatoreID = generatoreID.creaGeneratoreID();
         // Ora genera il prossimo ID
         this.id = generatoreID.generaProssimoId();
         this.spettacolo = spettacolo;

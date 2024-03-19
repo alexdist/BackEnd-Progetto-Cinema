@@ -24,6 +24,11 @@ public class Utente extends Persona implements Serializable {
         this.eta = eta;
     }
 
+    public int getEta(){
+        return this.eta;
+    }
+
+
     public void setCommand(IUserCommand command){
         this.command = command;
     }
