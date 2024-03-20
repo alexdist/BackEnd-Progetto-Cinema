@@ -4,7 +4,9 @@ import ticket.factory.product.IBiglietto;
 import user_interfaces.AcquistoBiglietto;
 import user_interfaces.IUserCommand;
 
-public class AcquistoBigliettoCommand implements IUserCommand {
+import java.io.Serializable;
+
+public class AcquistoBigliettoCommand implements IUserCommand, Serializable {
 
     private AcquistoBiglietto acquisto;
 

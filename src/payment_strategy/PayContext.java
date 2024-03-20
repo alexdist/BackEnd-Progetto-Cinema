@@ -1,6 +1,8 @@
 package payment_strategy;
 
-public class PayContext {
+import java.io.Serializable;
+
+public class PayContext implements Serializable {
 
     private IMetodoPagamentoStrategy metodoPagamentoStrategy;
 

@@ -3,11 +3,12 @@ package revenues_observer.observable;
 import revenues_observer.observer.IReport;
 import ticket.factory.product.IBiglietto;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 // SUBJECT
-public abstract class AbstractRegistroBiglietti {
+public abstract class AbstractRegistroBiglietti implements Serializable {
     private List<IBiglietto> biglietti = new ArrayList<>();
     private List<IReport> observers = new ArrayList<>();
 

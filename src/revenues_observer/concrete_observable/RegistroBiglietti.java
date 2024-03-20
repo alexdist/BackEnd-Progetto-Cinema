@@ -5,13 +5,14 @@ import revenues_observer.observable.AbstractRegistroBiglietti;
 import revenues_observer.observer.IReport;
 import ticket.factory.product.IBiglietto;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 //CONCRETE OBSERVABLE
 
-public class RegistroBiglietti extends AbstractRegistroBiglietti {
+public class RegistroBiglietti extends AbstractRegistroBiglietti implements Serializable {
 
     @Override
     public void aggiungiBiglietto(IBiglietto biglietto) {

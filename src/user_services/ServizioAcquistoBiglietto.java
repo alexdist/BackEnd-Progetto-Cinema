@@ -10,7 +10,9 @@ import revenues_observer.observable.AbstractRegistroBiglietti;
 import ticket.factory.product.IBiglietto;
 import user_interfaces.AcquistoBiglietto;
 
-public class ServizioAcquistoBiglietto implements AcquistoBiglietto {
+import java.io.Serializable;
+
+public class ServizioAcquistoBiglietto implements AcquistoBiglietto, Serializable {
     private PayContext pay;
     private AbstractRegistroBiglietti registro;
 

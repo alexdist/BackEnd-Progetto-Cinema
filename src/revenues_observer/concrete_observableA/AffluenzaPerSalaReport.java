@@ -5,12 +5,13 @@ import revenues_observer.observable.AbstractRegistroBiglietti;
 import revenues_observer.observer.IReport;
 import ticket.factory.product.IBiglietto;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 //CONCRETE OBSERVABLE A
-public class AffluenzaPerSalaReport implements IReport {
+public class AffluenzaPerSalaReport implements IReport, Serializable {
     private List<IBiglietto> biglietti;
     private AbstractRegistroBiglietti registro;
 

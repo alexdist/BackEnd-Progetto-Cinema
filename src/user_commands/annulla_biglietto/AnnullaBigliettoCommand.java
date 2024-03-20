@@ -6,7 +6,9 @@ import revenues_observer.observable.AbstractRegistroBiglietti;
 //import revenues_observer.observable.IRegistroBiglietti;
 import user_interfaces.IUserCommand;
 
-public class AnnullaBigliettoCommand implements IUserCommand {
+import java.io.Serializable;
+
+public class AnnullaBigliettoCommand implements IUserCommand, Serializable {
 
     private long id;
     private AbstractRegistroBiglietti annulla;
