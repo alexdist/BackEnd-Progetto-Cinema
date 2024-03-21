@@ -49,7 +49,7 @@ public class BigliettoRidotto implements IBiglietto, Serializable {
 
     @Override
     public String getColore() {
-        return "Verde";
+        return "green";
     }
 
     @Override

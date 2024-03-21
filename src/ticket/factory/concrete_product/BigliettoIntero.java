@@ -49,7 +49,7 @@ public class BigliettoIntero implements IBiglietto, Serializable {
 
     @Override
     public String getColore() {
-        return "Blu";
+        return "blue";
     }
 
     @Override

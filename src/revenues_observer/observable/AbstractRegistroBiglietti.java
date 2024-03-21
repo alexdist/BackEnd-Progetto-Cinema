@@ -16,6 +16,8 @@ public abstract class AbstractRegistroBiglietti implements Serializable {
 
     public abstract boolean annullaAcquisto(long idBiglietto);
 
+    private boolean ultimoAnnullamentoRiuscito = false;
+
     public List<IBiglietto> getBiglietti() {
         // Potrebbe essere necessario rendere questa implementazione più specifica, a seconda del comportamento desiderato.
         return new ArrayList<>(biglietti);
@@ -38,5 +40,9 @@ public abstract class AbstractRegistroBiglietti implements Serializable {
     // Metodo protetto per accedere alla lista di biglietti dalla classe concreta che estende questa classe astratta.
     protected List<IBiglietto> biglietti() {
         return biglietti;
+    }
+
+    public boolean isUltimoAnnullamentoRiuscito() {
+        return ultimoAnnullamentoRiuscito;
     }
 }

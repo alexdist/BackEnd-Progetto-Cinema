@@ -14,6 +14,8 @@ import java.util.List;
 
 public class RegistroBiglietti extends AbstractRegistroBiglietti implements Serializable {
 
+    private boolean ultimoAnnullamentoRiuscito = false;
+
     @Override
     public void aggiungiBiglietto(IBiglietto biglietto) {
         biglietti().add(biglietto);
@@ -22,20 +24,26 @@ public class RegistroBiglietti extends AbstractRegistroBiglietti implements Seri
 
     @Override
     public boolean annullaAcquisto(long idBiglietto) {
+        ultimoAnnullamentoRiuscito = false;
         List<IBiglietto> biglietti = biglietti(); // Accede alla lista di biglietti tramite il metodo protetto
         for (IBiglietto biglietto : biglietti) {
             if (biglietto.getId() == idBiglietto) {
                 LocalDateTime tempoDiAcquisto = biglietto.getTimestampAcquisto();
-                LocalDateTime tempoLimite = tempoDiAcquisto.plusMinutes(10);
+                LocalDateTime tempoLimite = tempoDiAcquisto.plusMinutes(1);
                 if (LocalDateTime.now().isBefore(tempoLimite)) {
                     biglietti.remove(biglietto);
                     notifyObservers();
+                    ultimoAnnullamentoRiuscito = true;
                     return true;
                 }
                 break;
             }
         }
         return false;
+    }
+
+    public boolean isUltimoAnnullamentoRiuscito() {
+        return ultimoAnnullamentoRiuscito;
     }
 
     // Non è più necessario sovrascrivere getBiglietti, addObserver, removeObserver e notifyObservers

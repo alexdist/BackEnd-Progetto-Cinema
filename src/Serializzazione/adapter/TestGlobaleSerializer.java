@@ -25,13 +25,13 @@ public class TestGlobaleSerializer {
 
     public static void main(String[] args) {
 //        // Adaptee instances
-        SalaSerializer salaSerializer = new SalaSerializer();
+        //SalaSerializer salaSerializer = new SalaSerializer();
         FilmSerializer filmSerializer = new FilmSerializer();
         SpettacoloSerializer spettacoloSerializer = new SpettacoloSerializer();
         PrezziBigliettoSerializer prezziBigliettoSerializer = new PrezziBigliettoSerializer();
 
         // Adapter instances
-        IDataSerializer salaSerializerAdapter = new SalaSerializerAdapter(salaSerializer);
+        IDataSerializer salaSerializerAdapter = new SalaSerializerAdapter(new SalaSerializer());
         IDataSerializer filmSerializerAdapter = new FilmSerializerAdapter(filmSerializer);
         IDataSerializer spettacoloSerializerAdapter = new SpettacoloSerializerAdapter(spettacoloSerializer);
         IDataSerializer prezziBigliettoSerializerAdapter = new PrezziBigliettoSerializerAdapter(prezziBigliettoSerializer);
