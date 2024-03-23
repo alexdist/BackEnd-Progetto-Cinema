@@ -3,10 +3,10 @@ package cinema_Infrastructure.film;
 import exception.film.FilmGiaPresenteException;
 import exception.film.DurataFilmNonValidaException;
 import exception.film.TitoloVuotoException;
-
 import java.util.List;
 
 public class ValidatoreFilm {
+
     // Metodo statico per validare i parametri di un film, incluso il controllo sul titolo
     public static void validaParametri(IFilm film) throws TitoloVuotoException, DurataFilmNonValidaException {
         if (film == null) {

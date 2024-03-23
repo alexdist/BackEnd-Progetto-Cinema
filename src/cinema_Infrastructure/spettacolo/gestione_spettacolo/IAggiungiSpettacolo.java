@@ -8,7 +8,6 @@ import exception.spettacolo.SovrapposizioneSpettacoloException;
 import java.util.List;
 
 public interface IAggiungiSpettacolo {
-
     void aggiungiSpettacolo(ISpettacolo nuovoSpettacolo) throws SovrapposizioneSpettacoloException, FilmNonValidoException, SalaNonValidaException;
     List<ISpettacolo> getSpettacoli();
 }

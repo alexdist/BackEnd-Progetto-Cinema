@@ -10,11 +10,11 @@ import java.util.List;
 public class RimuoviSala implements IRimuoviSala {
 
     private List<ISala> sale; // Usa l'interfaccia ISala
-    private static final String FILE_PATH = "sale.ser"; // Percorso del file per il salvataggio
 
     public RimuoviSala(List<ISala> sale) {
         this.sale = sale;
     }
+
 
     // Metodo per verificare se una sala esiste, basato sull'ID
     private boolean esisteSalaPerId(long idSala) {

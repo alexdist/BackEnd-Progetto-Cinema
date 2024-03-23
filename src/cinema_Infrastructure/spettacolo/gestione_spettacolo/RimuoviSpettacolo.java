@@ -7,10 +7,9 @@ import java.util.List;
 
 public class RimuoviSpettacolo implements IRimuoviSpettacolo {
 
+    private List<ISpettacolo> spettacoli; // Usa l'interfaccia ISpettacolo
 
-        private List<ISpettacolo> spettacoli; // Usa l'interfaccia ISpettacolo
-
-        public RimuoviSpettacolo(List<ISpettacolo> spettacoli) {
+    public RimuoviSpettacolo(List<ISpettacolo> spettacoli) {
             this.spettacoli = spettacoli;
         }
 

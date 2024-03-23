@@ -4,7 +4,6 @@ import cinema_Infrastructure.film.IFilm;
 import exception.film.FilmGiaPresenteException;
 import exception.film.DurataFilmNonValidaException;
 import exception.film.TitoloVuotoException;
-
 import java.util.List;
 
 public interface IAggiungiFilm {

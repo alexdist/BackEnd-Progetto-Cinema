@@ -7,9 +7,7 @@ import exception.spettacolo.SpettacoloNonTrovatoException;
 import java.time.LocalDateTime;
 
 public interface IModificaSpettacolo {
-
     void modificaFilmPerIdSpettacolo(long idSpettacolo, IFilm nuovoFilm) throws SpettacoloNonTrovatoException;
     void modificaSalaPerIdSpettacolo(long idSpettacolo, ISala nuovaSala) throws SpettacoloNonTrovatoException;
     void modificaOrarioProiezionePerIdSpettacolo(long idSpettacolo, LocalDateTime nuovoOrario) throws SpettacoloNonTrovatoException;
-
 }

@@ -22,21 +22,34 @@ public class ServizioAcquistoBiglietto implements AcquistoBiglietto, Serializabl
         this.registro = registro;
     }
 
-    @Override
-    public void acquistaBiglietto(IBiglietto biglietto) {
-
-
-        //if (sala.occupaPosto()) { // Verifica la disponibilità di posti prima dell'acquisto
-        pay.eseguiPagamento(biglietto.getCosto());
-        registro.aggiungiBiglietto(biglietto);
-
-
-
-        System.out.println("Biglietto acquistato con successo per lo spettacolo: "
-                + biglietto.getSpettacolo().getFilm().getTitolo() + " al costo di: " + biglietto.getCosto());
+//    @Override
+//    public void acquistaBiglietto(IBiglietto biglietto) {
+//
+//
+//        if (biglietto.getSpettacolo().getSala().occupaPosto()) { // Verifica la disponibilità di posti prima dell'acquisto
+//        pay.eseguiPagamento(biglietto.getCosto());
+//        registro.aggiungiBiglietto(biglietto);
+//
+//
+//
+//        System.out.println("Biglietto acquistato con successo per lo spettacolo: "
+//                + biglietto.getSpettacolo().getFilm().getTitolo() + " al costo di: " + biglietto.getCosto());
 //        } else {
 //            System.out.println("Non è stato possibile acquistare il biglietto: posti esauriti.");
 //        }
+//    }
+
+    @Override
+    public boolean acquistaBiglietto(IBiglietto biglietto) {
+
+            pay.eseguiPagamento(biglietto.getCosto());
+            registro.aggiungiBiglietto(biglietto);
+           // biglietto.getSpettacolo().getSala().occupaPosto();
+//            System.out.println("Biglietto acquistato con successo per lo spettacolo: "
+//                    + biglietto.getSpettacolo().getFilm().getTitolo() + " al costo di: " + biglietto.getCosto());
+            return true; // Acquisto riuscito
     }
+
+
 }
 

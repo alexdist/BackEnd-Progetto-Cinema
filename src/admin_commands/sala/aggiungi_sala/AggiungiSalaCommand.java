@@ -1,7 +1,6 @@
 package admin_commands.sala.aggiungi_sala;
 
 import admin_interfaces.ICommand;
-import cinema_Infrastructure.film.gestione_film.IAggiungiFilm;
 import cinema_Infrastructure.sala.ISala;
 import cinema_Infrastructure.sala.gestione_sala.IAggiungiSala;
 import exception.sala.SalaGiaEsistenteException;

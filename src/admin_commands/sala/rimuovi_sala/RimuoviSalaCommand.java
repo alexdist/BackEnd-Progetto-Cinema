@@ -1,7 +1,6 @@
 package admin_commands.sala.rimuovi_sala;
 
 import admin_interfaces.ICommand;
-
 import cinema_Infrastructure.sala.gestione_sala.IRimuoviSala;
 import exception.film.FilmNonTrovatoException;
 import exception.sala.SalaNonTrovataException;

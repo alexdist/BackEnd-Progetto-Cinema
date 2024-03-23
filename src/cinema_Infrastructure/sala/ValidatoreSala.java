@@ -1,12 +1,9 @@
 package cinema_Infrastructure.sala;
 
-import cinema_Infrastructure.sala.Sala;
 import exception.sala.NumeroPostiNegativoException;
 import exception.sala.NumeroSalaNegativoException;
 import exception.sala.SalaGiaEsistenteException;
-
 import java.util.List;
-import java.util.Optional;
 
 public class ValidatoreSala {
     // Metodo per validare i parametri di una sala usando l'interfaccia ISala

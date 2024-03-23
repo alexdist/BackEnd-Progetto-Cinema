@@ -10,7 +10,7 @@ import java.util.List;
 
 public class ModificaSpettacolo implements IModificaSpettacolo {
 
-    private List<ISpettacolo> spettacoli; // Usa l'interfaccia ISpettacolo
+    private List<ISpettacolo> spettacoli;
 
     public ModificaSpettacolo(List<ISpettacolo> spettacoli) {
         this.spettacoli = spettacoli;
