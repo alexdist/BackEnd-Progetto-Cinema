@@ -12,6 +12,8 @@ import exception.sala.SalaGiaEsistenteException;
 import exception.sala.SalaNonTrovataException;
 import exception.spettacolo.SpettacoloNonTrovatoException;
 
+import java.io.IOException;
+
 public class Amministratore extends Persona {
 
     private ICommand command;
@@ -25,7 +27,7 @@ public class Amministratore extends Persona {
         this.command = command;
     }
 
-    public void eseguiComando() throws FilmGiaPresenteException, DurataFilmNonValidaException, TitoloVuotoException, FilmNonTrovatoException, SalaGiaEsistenteException, SalaNonTrovataException, SovrapposizioneSpettacoloException, FilmNonValidoException, SalaNonValidaException, SpettacoloNonTrovatoException {
+    public void eseguiComando() throws FilmGiaPresenteException, DurataFilmNonValidaException, TitoloVuotoException, FilmNonTrovatoException, SalaGiaEsistenteException, SalaNonTrovataException, SovrapposizioneSpettacoloException, FilmNonValidoException, SalaNonValidaException, SpettacoloNonTrovatoException, IOException {
         command.execute();
     }
 

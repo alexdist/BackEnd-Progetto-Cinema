@@ -11,6 +11,8 @@ import exception.sala.SalaGiaEsistenteException;
 import exception.sala.SalaNonTrovataException;
 import exception.spettacolo.SpettacoloNonTrovatoException;
 
+import java.io.IOException;
+
 /**
  * Interfaccia Command definisce l'operazione di esecuzione per tutti i comandi concreti.
  * Questa interfaccia è il nucleo del pattern Command, consentendo di incapsulare una richiesta come un oggetto.
@@ -21,5 +23,5 @@ public interface ICommand {
      * Metodo execute che ogni comando concreto dovrà implementare.
      * Questo metodo è responsabile dell'esecuzione dell'azione specifica del comando.
      */
-    void execute() throws FilmGiaPresenteException, DurataFilmNonValidaException, TitoloVuotoException, FilmNonTrovatoException, SalaGiaEsistenteException, SalaNonTrovataException, SovrapposizioneSpettacoloException, FilmNonValidoException, SalaNonValidaException, SpettacoloNonTrovatoException;
+    void execute() throws FilmGiaPresenteException, DurataFilmNonValidaException, TitoloVuotoException, FilmNonTrovatoException, SalaGiaEsistenteException, SalaNonTrovataException, SovrapposizioneSpettacoloException, FilmNonValidoException, SalaNonValidaException, SpettacoloNonTrovatoException, IOException;
 }

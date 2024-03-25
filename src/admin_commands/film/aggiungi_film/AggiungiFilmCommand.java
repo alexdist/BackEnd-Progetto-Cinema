@@ -7,6 +7,8 @@ import exception.film.DurataFilmNonValidaException;
 import exception.film.FilmGiaPresenteException;
 import exception.film.TitoloVuotoException;
 
+import java.io.IOException;
+
 public class AggiungiFilmCommand implements ICommand {
 
     private IAggiungiFilm add;
@@ -19,7 +21,7 @@ public class AggiungiFilmCommand implements ICommand {
     }
 
     @Override
-    public void execute() throws FilmGiaPresenteException, DurataFilmNonValidaException, TitoloVuotoException {
+    public void execute() throws FilmGiaPresenteException, DurataFilmNonValidaException, TitoloVuotoException, IOException {
 
         add.aggiungiFilm(film);
     }

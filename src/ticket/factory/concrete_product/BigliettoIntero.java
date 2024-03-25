@@ -9,6 +9,7 @@ import ticket.factory.product.IBiglietto;
 //import ticket.GeneratoreIDBiglietto;
 //import ticket.IGeneratoreIDBiglietto;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 

@@ -3,6 +3,8 @@ package Serializzazione.adapter.adapter;
 import Serializzazione.adapter.adaptee.IdSerializer;
 import Serializzazione.adapter.target.IDataSerializer;
 
+import java.io.IOException;
+
 public class IdSerializerAdapter implements IDataSerializer {
     private IdSerializer adaptee;
 

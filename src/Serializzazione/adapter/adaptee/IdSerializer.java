@@ -3,7 +3,7 @@ package Serializzazione.adapter.adaptee;
 import java.io.*;
 
 public class IdSerializer {
-    public void saveId(Long id, String filePath) {
+    public void saveId(Long id, String filePath){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
             writer.write(id.toString());
         } catch (IOException e) {
@@ -11,7 +11,7 @@ public class IdSerializer {
         }
     }
 
-    public Long loadId(String filePath) {
+    public Long loadId(String filePath){
         try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line = reader.readLine();
             if (line != null) {

@@ -4,6 +4,8 @@ package prova_id_PERSISTENTE;
 import Serializzazione.adapter.adapter.IdSerializerAdapter;
 import Serializzazione.adapter.target.IDataSerializer;
 
+import java.io.IOException;
+
 public class GeneratoreIDPersistenteBiglietti implements IGeneratoreIDPersistente {
 
     private long ultimoId;

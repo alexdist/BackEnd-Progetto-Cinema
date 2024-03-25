@@ -6,7 +6,7 @@ import java.io.*;
 
 public class RegistroBigliettiSerializer {
 
-    public void serializeRegistroBiglietti(AbstractRegistroBiglietti registro, String filePath) {
+    public void serializeRegistroBiglietti(AbstractRegistroBiglietti registro, String filePath){
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filePath))) {
             oos.writeObject(registro);
         } catch (IOException e) {

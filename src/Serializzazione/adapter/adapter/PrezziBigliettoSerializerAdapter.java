@@ -5,6 +5,8 @@ import Serializzazione.adapter.target.IDataSerializer;
 
 import ticket_pricing.PrezziBiglietto;
 
+import java.io.IOException;
+
 public class PrezziBigliettoSerializerAdapter implements IDataSerializer {
     private PrezziBigliettoSerializer adaptee;
 

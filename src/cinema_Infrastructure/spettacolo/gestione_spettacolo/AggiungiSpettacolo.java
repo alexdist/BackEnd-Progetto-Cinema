@@ -6,6 +6,8 @@ import exception.film.FilmNonValidoException;
 import exception.sala.SalaNonValidaException;
 import exception.spettacolo.SovrapposizioneSpettacoloException;
 import prova_id_PERSISTENTE.IGeneratoreIDPersistente;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +22,7 @@ public class AggiungiSpettacolo implements IAggiungiSpettacolo {
     }
 
     @Override
-    public void aggiungiSpettacolo(ISpettacolo nuovoSpettacolo) throws SovrapposizioneSpettacoloException, FilmNonValidoException, SalaNonValidaException {
+    public void aggiungiSpettacolo(ISpettacolo nuovoSpettacolo) throws SovrapposizioneSpettacoloException, FilmNonValidoException, SalaNonValidaException, IOException {
         // Validazione della sovrapposizione degli spettacoli
         ValidatoreSpettacolo.validaSpettacolo(nuovoSpettacolo, spettacoli);
 

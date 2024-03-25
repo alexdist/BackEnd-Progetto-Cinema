@@ -5,6 +5,7 @@ import Serializzazione.adapter.target.IDataSerializer;
 
 import cinema_Infrastructure.sala.ISala;
 
+import java.io.IOException;
 import java.util.List;
 
 public class SalaSerializerAdapter implements IDataSerializer {
@@ -19,7 +20,7 @@ public class SalaSerializerAdapter implements IDataSerializer {
     }
 
     @Override
-    public void serialize(Object data, String filePath) {
+    public void serialize(Object data, String filePath){
         if (!(data instanceof List<?>)) {
             throw new IllegalArgumentException("Data type not supported for Sala serialization.");
         }

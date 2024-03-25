@@ -1,8 +1,10 @@
 package prova_id_PERSISTENTE;
 
-public interface IGeneratoreIDPersistente {
-    long generaProssimoId();
-    void salvaUltimoIdUsato();
+import java.io.IOException;
 
-     void caricaUltimoIdUsato();
+public interface IGeneratoreIDPersistente {
+    long generaProssimoId() ;
+    void salvaUltimoIdUsato() ;
+
+     void caricaUltimoIdUsato() ;
 }

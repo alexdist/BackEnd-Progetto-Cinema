@@ -4,6 +4,7 @@ import Serializzazione.adapter.adaptee.BigliettiSerializer;
 import Serializzazione.adapter.target.IDataSerializer;
 import ticket.factory.product.IBiglietto;
 
+import java.io.IOException;
 import java.util.List;
 
 public class BigliettiSerializerAdapter implements IDataSerializer {
@@ -14,7 +15,7 @@ public class BigliettiSerializerAdapter implements IDataSerializer {
     }
 
     @Override
-    public void serialize(Object data, String filePath) {
+    public void serialize(Object data, String filePath){
         if (!(data instanceof List<?>)) {
             throw new IllegalArgumentException("Data type not supported for serialization.");
         }
@@ -22,7 +23,7 @@ public class BigliettiSerializerAdapter implements IDataSerializer {
     }
 
     @Override
-    public Object deserialize(String filePath) {
+    public Object deserialize(String filePath){
         return adaptee.deserializeBigliettiList(filePath);
     }
 }

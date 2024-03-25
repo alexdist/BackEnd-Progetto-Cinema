@@ -6,6 +6,8 @@ import exception.film.FilmGiaPresenteException;
 import exception.film.DurataFilmNonValidaException;
 import exception.film.TitoloVuotoException;
 import prova_id_PERSISTENTE.IGeneratoreIDPersistente;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class AggiungiFilm implements IAggiungiFilm {
 
 
     @Override
-    public void aggiungiFilm(IFilm film) throws FilmGiaPresenteException, TitoloVuotoException, DurataFilmNonValidaException {
+    public void aggiungiFilm(IFilm film) throws FilmGiaPresenteException, TitoloVuotoException, DurataFilmNonValidaException, IOException {
 
         ValidatoreFilm.validaParametri(film);
         ValidatoreFilm.controllaSeFilmEsiste(filmInProgrammazione, film);

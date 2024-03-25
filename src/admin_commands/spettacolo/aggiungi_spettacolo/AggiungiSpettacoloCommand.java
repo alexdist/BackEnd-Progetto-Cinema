@@ -7,6 +7,8 @@ import exception.film.FilmNonValidoException;
 import exception.sala.SalaNonValidaException;
 import exception.spettacolo.SovrapposizioneSpettacoloException;
 
+import java.io.IOException;
+
 public class AggiungiSpettacoloCommand implements ICommand {
 
     private IAggiungiSpettacolo add;
@@ -18,7 +20,7 @@ public class AggiungiSpettacoloCommand implements ICommand {
         this.spettacolo = spettacolo;
     }
 
-    public void execute() throws SovrapposizioneSpettacoloException, FilmNonValidoException, SalaNonValidaException {
+    public void execute() throws SovrapposizioneSpettacoloException, FilmNonValidoException, SalaNonValidaException, IOException {
         add.aggiungiSpettacolo(spettacolo);
     }
 

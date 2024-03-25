@@ -6,6 +6,8 @@ import exception.sala.NumeroPostiNegativoException;
 import exception.sala.NumeroSalaNegativoException;
 import exception.sala.SalaGiaEsistenteException;
 import prova_id_PERSISTENTE.IGeneratoreIDPersistente;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,7 +21,7 @@ public class AggiungiSala implements IAggiungiSala {
     }
 
     @Override
-    public void aggiungiSala(ISala nuovaSala) throws SalaGiaEsistenteException, NumeroSalaNegativoException, NumeroPostiNegativoException {
+    public void aggiungiSala(ISala nuovaSala) throws SalaGiaEsistenteException, NumeroSalaNegativoException, NumeroPostiNegativoException, IOException {
         // Validazione dei parametri della sala e controllo unicità numero sala
         ValidatoreSala.validaParametri(nuovaSala);
         ValidatoreSala.validaUnicitaSala(sale, nuovaSala.getNumeroSala());

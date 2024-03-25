@@ -4,6 +4,8 @@ import Serializzazione.adapter.adaptee.RegistroBigliettiSerializer;
 import Serializzazione.adapter.target.IDataSerializer;
 import revenues_observer.observable.AbstractRegistroBiglietti;
 
+import java.io.IOException;
+
 public class RegistroBigliettiSerializerAdapter implements IDataSerializer {
     private RegistroBigliettiSerializer adaptee;
 

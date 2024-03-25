@@ -5,6 +5,8 @@ import cinema_Infrastructure.sala.ISala;
 import cinema_Infrastructure.sala.gestione_sala.IAggiungiSala;
 import exception.sala.SalaGiaEsistenteException;
 
+import java.io.IOException;
+
 public class AggiungiSalaCommand implements ICommand {
 
     private IAggiungiSala add;
@@ -16,7 +18,7 @@ public class AggiungiSalaCommand implements ICommand {
         this.sala = sala;
     }
 
-    public void execute() throws SalaGiaEsistenteException {
+    public void execute() throws SalaGiaEsistenteException, IOException {
         add.aggiungiSala(sala);
     }
 }

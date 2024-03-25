@@ -7,6 +7,8 @@ import prova_id_PERSISTENTE.IGeneratoreIDPersistente;
 import ticket.factory.abstract_factory.BigliettoFactory;
 import ticket.factory.concrete_product.BigliettoRidotto;
 import ticket.factory.product.IBiglietto;
+
+import java.io.IOException;
 //import ticket.IGeneratoreIDBiglietto;
 
 //public class BigliettoRidottoFactory extends BigliettoFactory {

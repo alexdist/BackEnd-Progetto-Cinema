@@ -8,7 +8,7 @@ import java.util.List;
 public class FilmSerializer {
 
     // Rimossi i modificatori static dai metodi
-    public void serializeFilmList(List<IFilm> filmList, String filePath) {
+    public void serializeFilmList(List<IFilm> filmList, String filePath){
         try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(filePath))) {
             out.writeObject(filmList);
         } catch (IOException e) {

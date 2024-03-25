@@ -32,7 +32,7 @@ private long ultimoId;
         idSerializerAdapter.serialize(ultimoId, FILE_PATH);
     }
 
-    public void caricaUltimoIdUsato() {
+    public void caricaUltimoIdUsato(){
         // Delega al SerializerAdapter il compito di caricare l'ultimo ID
         Long idCaricato = (Long) idSerializerAdapter.deserialize(FILE_PATH);
         if (idCaricato != null) {

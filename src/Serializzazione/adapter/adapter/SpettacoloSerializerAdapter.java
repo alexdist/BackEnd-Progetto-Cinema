@@ -4,6 +4,7 @@ import Serializzazione.adapter.adaptee.SpettacoloSerializer;
 import Serializzazione.adapter.target.IDataSerializer;
 import cinema_Infrastructure.spettacolo.ISpettacolo;
 
+import java.io.IOException;
 import java.util.List;
 
 public class SpettacoloSerializerAdapter implements IDataSerializer {
