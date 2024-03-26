@@ -15,9 +15,12 @@ public class RicaviPerSalaReport implements IReport, Serializable {
     private List<IBiglietto> biglietti;
     private AbstractRegistroBiglietti registro;
 
+    private Map<Integer, Double> ricaviPerSala; // Aggiunto per mantenere lo stato attuale dei ricavi per sala
+
     public RicaviPerSalaReport(AbstractRegistroBiglietti registro) {
         this.registro = registro;
         this.biglietti = registro.getBiglietti();
+        this.ricaviPerSala = new HashMap<>();
         registro.addObserver(this);
     }
 
@@ -29,7 +32,8 @@ public class RicaviPerSalaReport implements IReport, Serializable {
 
     @Override
     public void generate() {
-        Map<Integer, Double> ricaviPerSala = new HashMap<>();
+        ricaviPerSala.clear();
+       // Map<Integer, Double> ricaviPerSala = new HashMap<>();
         for (IBiglietto biglietto : biglietti) {
             int numeroSala = biglietto.getSpettacolo().getSala().getNumeroSala();
             ricaviPerSala.merge(numeroSala, biglietto.getCosto(), Double::sum);
@@ -37,6 +41,9 @@ public class RicaviPerSalaReport implements IReport, Serializable {
         System.out.println("Report Ricavi per Sala:");
         ricaviPerSala.forEach((sala, ricavo) ->
                 System.out.println("Sala " + sala + ": ricavi totali = " + ricavo + "€"));
+    }
+    public Map<Integer, Double> getRicaviPerSala() {
+        return new HashMap<>(ricaviPerSala);
     }
 }
 //public class RicaviPerSalaReport implements IReport {

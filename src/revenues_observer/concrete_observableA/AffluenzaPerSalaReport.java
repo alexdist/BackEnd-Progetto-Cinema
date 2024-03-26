@@ -14,10 +14,12 @@ import java.util.Map;
 public class AffluenzaPerSalaReport implements IReport, Serializable {
     private List<IBiglietto> biglietti;
     private AbstractRegistroBiglietti registro;
+    private Map<Integer, Integer> affluenzaPerSala; // Aggiunto per mantenere lo stato attuale dell'affluenza per sala
 
     public AffluenzaPerSalaReport(AbstractRegistroBiglietti registro) {
         this.registro = registro;
         this.biglietti = registro.getBiglietti();
+        this.affluenzaPerSala = new HashMap<>();
         registro.addObserver(this);
     }
 
@@ -29,7 +31,8 @@ public class AffluenzaPerSalaReport implements IReport, Serializable {
 
     @Override
     public void generate() {
-        Map<Integer, Integer> affluenzaPerSala = new HashMap<>();
+        affluenzaPerSala.clear();
+        //Map<Integer, Integer> affluenzaPerSala = new HashMap<>();
         for (IBiglietto biglietto : biglietti) {
             int numeroSala = biglietto.getSpettacolo().getSala().getNumeroSala();
             affluenzaPerSala.merge(numeroSala, 1, Integer::sum);
@@ -37,6 +40,9 @@ public class AffluenzaPerSalaReport implements IReport, Serializable {
         System.out.println("Report Affluenza per Sala:");
         affluenzaPerSala.forEach((sala, affluenza) ->
                 System.out.println("Sala " + sala + ": affluenza totale = " + affluenza + " persone"));
+    }
+    public Map<Integer, Integer> getAffluenzaPerSala() {
+        return new HashMap<>(affluenzaPerSala);
     }
 }
 //public class AffluenzaPerSalaReport implements IReport {
