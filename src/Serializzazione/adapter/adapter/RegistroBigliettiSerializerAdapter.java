@@ -6,6 +6,8 @@ import revenues_observer.observable.AbstractRegistroBiglietti;
 
 import java.io.IOException;
 
+// RegistroBigliettiSerializerAdapter è l'Adapter che implementa l'interfaccia Target IDataSerializer.
+// Questa classe adatta l'interfaccia dell'Adaptee RegistroBigliettiSerializer a quella richiesta dal client.
 public class RegistroBigliettiSerializerAdapter implements IDataSerializer {
     private RegistroBigliettiSerializer adaptee;
 

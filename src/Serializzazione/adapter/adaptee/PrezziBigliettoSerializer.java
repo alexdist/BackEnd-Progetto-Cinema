@@ -4,6 +4,9 @@ import ticket_pricing.PrezziBiglietto;
 
 import java.io.*;
 
+// PrezziBigliettoSerializer è l'Adaptee nel pattern Adapter.
+// Contiene la logica di business specifica per la serializzazione e deserializzazione dei Prezzi Biglietto,
+// ma la sua interfaccia non è compatibile con quella richiesta dal client.
 public class PrezziBigliettoSerializer {
 
     public void serialize(PrezziBiglietto prezziBiglietto, String filePath) {

@@ -1,6 +1,8 @@
 package cinema_Infrastructure.film;
 
 
+
+ // Interfaccia IFilm che definisce il contratto per le operazioni base su un film.
 public interface IFilm {
     long getId();
     void setId(long id);

@@ -1,21 +1,22 @@
-package prova_id_PERSISTENTE;
+package ID_persistente;
 
-//import Serializzazione.adapter.adapter.IdSalaSerializerAdapter;
+//import Serializzazione.adapter.adapter.IdSpettacoloSerializerAdapter;
 import Serializzazione.adapter.adapter.IdSerializerAdapter;
 import Serializzazione.adapter.target.IDataSerializer;
 
-import java.io.*;
+public class GeneratoreIDPersistenteSpettacolo implements IGeneratoreIDPersistente {
 
-public class GeneratoreIDPersistenteSala implements IGeneratoreIDPersistente {
+    // Variabile privata per tenere traccia dell'ultimo ID usato
+    private long ultimoId;
+    private static final String FILE_PATH = "ultimoIdSpettacolo.txt";
 
-private long ultimoId;
-    private static final String FILE_PATH = "ultimoIdSala.txt";
+    // Adapter per la serializzazione dell'ID
     private IDataSerializer idSerializerAdapter;
 
-    public GeneratoreIDPersistenteSala() {
-        // Inizializza l'adapter
+    public GeneratoreIDPersistenteSpettacolo(){
+        // Inizializza l'adapter per la serializzazione/deserializzazione degli ID
         this.idSerializerAdapter = new IdSerializerAdapter();
-        // Carica l'ultimo ID usato utilizzando l'adapter
+        // Carica l'ultimo ID usato da File utilizzando l'adapter
         caricaUltimoIdUsato();
     }
 
@@ -27,7 +28,7 @@ private long ultimoId;
         return ultimoId;
     }
 
-    public void salvaUltimoIdUsato() {
+    public void salvaUltimoIdUsato(){
         // Delega al SerializerAdapter il compito di salvare l'ultimo ID
         idSerializerAdapter.serialize(ultimoId, FILE_PATH);
     }
@@ -42,5 +43,3 @@ private long ultimoId;
         }
     }
 }
-
-

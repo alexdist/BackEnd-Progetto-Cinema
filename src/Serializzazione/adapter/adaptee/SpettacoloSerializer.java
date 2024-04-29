@@ -5,6 +5,9 @@ import cinema_Infrastructure.spettacolo.ISpettacolo;
 import java.io.*;
 import java.util.List;
 
+// SpettacoloSerializer è l'Adaptee nel pattern Adapter.
+// Contiene la logica di business specifica per la serializzazione e deserializzazione delle liste di Spettacoli,
+// ma la sua interfaccia non è compatibile con quella richiesta dal client.
 public class SpettacoloSerializer {
 
     public void serializeSpettacoloList(List<ISpettacolo> spettacoloList, String filePath) {

@@ -7,6 +7,8 @@ import cinema_Infrastructure.spettacolo.ISpettacolo;
 import java.io.IOException;
 import java.util.List;
 
+// SpettacoloSerializerAdapter è l'Adapter che implementa l'interfaccia Target IDataSerializer.
+// Questa classe adatta l'interfaccia dell'Adaptee SpettacoloSerializer a quella richiesta dal client.
 public class SpettacoloSerializerAdapter implements IDataSerializer {
     private SpettacoloSerializer adaptee;
 

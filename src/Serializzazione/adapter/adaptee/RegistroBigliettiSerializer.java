@@ -4,6 +4,9 @@ import revenues_observer.observable.AbstractRegistroBiglietti;
 
 import java.io.*;
 
+// RegistroBigliettiSerializer è l'Adaptee nel pattern Adapter.
+// Contiene la logica di business specifica per la serializzazione e deserializzazione delle liste di film,
+// ma la sua interfaccia non è compatibile con quella richiesta dal client.
 public class RegistroBigliettiSerializer {
 
     public void serializeRegistroBiglietti(AbstractRegistroBiglietti registro, String filePath){

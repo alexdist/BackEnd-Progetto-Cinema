@@ -5,6 +5,9 @@ import cinema_Infrastructure.sala.ISala;
 import java.io.*;
 import java.util.List;
 
+// SalaSerializer è l'Adaptee nel pattern Adapter.
+// Contiene la logica di business specifica per la serializzazione e deserializzazione delle liste di sale,
+// ma la sua interfaccia non è compatibile con quella richiesta dal client.
 public class SalaSerializer {
 
     // Rimossi i modificatori static dai metodi

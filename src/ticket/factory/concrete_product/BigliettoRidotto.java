@@ -4,22 +4,20 @@ package ticket.factory.concrete_product;
 
 import cinema_Infrastructure.spettacolo.ISpettacolo;
 import domain.Utente;
-import id_generator_factory.abstract_factory.GeneratoreIDFactory;
-import id_generator_factory.product.IGeneratoreID;
-import prova_id_PERSISTENTE.IGeneratoreIDPersistente;
+//import id_generator_factory.abstract_factory.GeneratoreIDFactory;
+//import id_generator_factory.product.IGeneratoreID;
+import ID_persistente.IGeneratoreIDPersistente;
 import ticket.factory.product.IBiglietto;
 //import ticket.GeneratoreIDBiglietto;
 //import ticket.IGeneratoreIDBiglietto;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+// BigliettoRidotto è un altro 'ConcreteProduct'.
 public class BigliettoRidotto implements IBiglietto, Serializable {
 
-
     private final long id;
-
     private final LocalDateTime timestampAcquisto;
     private ISpettacolo spettacolo;
     private Utente acquirente;
@@ -28,9 +26,6 @@ public class BigliettoRidotto implements IBiglietto, Serializable {
 
     public BigliettoRidotto(ISpettacolo spettacolo, Utente acquirente, double costo, IGeneratoreIDPersistente generatoreID) {
         this.timestampAcquisto = LocalDateTime.now();
-        // Utilizza la factory per ottenere il generatore di ID specifico per i biglietti
-        //IGeneratoreID generatoreID = generatoreIDFactory.creaGeneratoreID();
-        // Ora genera il prossimo ID
         this.id = generatoreID.generaProssimoId();
         this.spettacolo = spettacolo;
         this.acquirente = acquirente;

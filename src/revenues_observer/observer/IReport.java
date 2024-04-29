@@ -1,13 +1,13 @@
 package revenues_observer.observer;
 
 
-//import revenues_observer.observable.IRegistroBiglietti;
 
-import java.io.Serializable;
 
 //OBSERVER
+// Interfaccia Observer: definisce l'operazione di update che deve essere implementata da ogni observer concreto.
 public interface IReport {
 
-    void update();  // Aggiorna i dati del report in risposta a un cambiamento
-    void generate(); // Genera il report basato sui dati aggiornati
+    void update();  // Metodo utilizzato per aggiornare i dati del report in risposta a un cambiamento.
+
+    void generate(); // Metodo per generare il report basato sui dati aggiornati.
 }

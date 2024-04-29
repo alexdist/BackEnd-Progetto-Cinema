@@ -1,11 +1,9 @@
-package prova_id_PERSISTENTE;
+package ID_persistente;
 
 //import Serializzazione.adapter.adapter.IdFilmSerializerAdapter;
 //import Serializzazione.adapter.adapter.IdSalaSerializerAdapter;
 import Serializzazione.adapter.adapter.IdSerializerAdapter;
 import Serializzazione.adapter.target.IDataSerializer;
-
-import java.io.*;
 
 public class GeneratoreIDPersistenteFilm implements IGeneratoreIDPersistente{
 

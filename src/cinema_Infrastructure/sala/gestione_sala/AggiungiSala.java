@@ -5,12 +5,15 @@ import cinema_Infrastructure.sala.ValidatoreSala;
 import exception.sala.NumeroPostiNegativoException;
 import exception.sala.NumeroSalaNegativoException;
 import exception.sala.SalaGiaEsistenteException;
-import prova_id_PERSISTENTE.IGeneratoreIDPersistente;
+import ID_persistente.IGeneratoreIDPersistente;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+// AggiungiSala è la classe concreta che implementa l'interfaccia IAggiungiSala,
+// agendo come il 'Receiver' nel pattern Command.
+// Ha il compito di gestire l'aggiunta di nuove Sale.
 public class AggiungiSala implements IAggiungiSala {
     IGeneratoreIDPersistente generatoreID;
     private List<ISala> sale; // Usa l'interfaccia ISala

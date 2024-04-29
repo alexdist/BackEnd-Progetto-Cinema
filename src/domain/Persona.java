@@ -2,12 +2,14 @@ package domain;
 
 import java.io.Serializable;
 
+// Classe astratta Persona che implementa Serializable per permettere la serializzazione degli oggetti.
+// Serve come base per rappresentare persone con attributi comuni come nome, cognome e ruolo.
 public abstract class Persona implements Serializable {
     private String nome;
     private String cognome;
-    private Ruolo ruolo; // Aggiunto il campo ruolo
+    private Ruolo ruolo; // Enumerazione Ruolo che specifica il ruolo della persona (es. AMMINISTRATORE, UTENTE)
 
-    // Costruttore modificato per includere il ruolo
+
     public Persona(String nome, String cognome, Ruolo ruolo) {
         this.nome = nome;
         this.cognome = cognome;

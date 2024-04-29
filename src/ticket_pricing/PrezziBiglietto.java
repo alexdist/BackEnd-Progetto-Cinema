@@ -2,10 +2,10 @@ package ticket_pricing;
 
 import java.io.Serializable;
 
+// Implementazione dell'interfaccia IPrezziBiglietto che mantiene i prezzi dei biglietti.
 public class PrezziBiglietto implements IPrezziBiglietto, Serializable {
-    private   double prezzoIntero;
-    private   double prezzoRidotto;
-
+    private double prezzoIntero;
+    private double prezzoRidotto;
     private double sovrapprezzo;
 
     public PrezziBiglietto(double prezzoIntero, double prezzoRidotto) {
@@ -19,6 +19,8 @@ public class PrezziBiglietto implements IPrezziBiglietto, Serializable {
         this.sovrapprezzo = sovrapprezzo;
     }
 
+    // Getter e setter per il prezzo intero, ridotto e per il sovrapprezzo.
+    // Questi metodi permettono di modificare e accedere ai prezzi correnti.
     public double getPrezzoIntero() {
         return prezzoIntero;
     }

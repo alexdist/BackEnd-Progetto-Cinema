@@ -8,8 +8,10 @@ import cinema_Infrastructure.film.IFilm;
 import java.io.IOException;
 import java.util.List;
 
+// FilmSerializerAdapter è l'Adapter che implementa l'interfaccia Target IDataSerializer.
+// Questa classe adatta l'interfaccia dell'Adaptee FilmSerializer a quella richiesta dal client.
 public class FilmSerializerAdapter implements IDataSerializer {
-    private FilmSerializer adaptee;
+    private FilmSerializer adaptee;// L'istanza dell'Adaptee che verrà utilizzata per delegare le richieste reali.
 
     public FilmSerializerAdapter() {
         this.adaptee = new FilmSerializer();
@@ -19,6 +21,8 @@ public class FilmSerializerAdapter implements IDataSerializer {
         this.adaptee = adaptee;
     }
 
+    // Implementa il metodo serialize dell'interfaccia Target convertendo il tipo di dati generico
+    // nel tipo specifico atteso dall'Adaptee (List<IFilm>) prima di chiamare il metodo corrispondente.
     @Override
     public void serialize(Object data, String filePath){
         if (!(data instanceof List<?>)) {
@@ -28,6 +32,8 @@ public class FilmSerializerAdapter implements IDataSerializer {
         adaptee.serializeFilmList((List<IFilm>) data, filePath);
     }
 
+    // Implementa il metodo deserialize dell'interfaccia Target.
+    // Delega la chiamata al metodo dell'Adaptee e ritorna il risultato appropriato.
     @Override
     public Object deserialize(String filePath) {
         return adaptee.deserializeFilmList(filePath);

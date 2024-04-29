@@ -2,6 +2,9 @@ package Serializzazione.adapter.adaptee;
 
 import java.io.*;
 
+// idSerializer è l'Adaptee nel pattern Adapter.
+// Contiene la logica di business specifica per la serializzazione e deserializzazione degli id,
+// ma la sua interfaccia non è compatibile con quella richiesta dal client.
 public class IdSerializer {
     public void saveId(Long id, String filePath){
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {

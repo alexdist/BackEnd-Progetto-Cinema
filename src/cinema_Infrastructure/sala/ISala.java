@@ -1,5 +1,6 @@
 package cinema_Infrastructure.sala;
 
+// Interfaccia ISala che definisce il contratto per le operazioni base su una Sala.
 public interface ISala {
     boolean occupaPosto();
     void liberaPosto();

@@ -1,10 +1,8 @@
-package prova_id_PERSISTENTE;
+package ID_persistente;
 
 //import Serializzazione.adapter.adapter.IdBigliettiSerializerAdapter;
 import Serializzazione.adapter.adapter.IdSerializerAdapter;
 import Serializzazione.adapter.target.IDataSerializer;
-
-import java.io.IOException;
 
 public class GeneratoreIDPersistenteBiglietti implements IGeneratoreIDPersistente {
 

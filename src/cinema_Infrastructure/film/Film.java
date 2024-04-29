@@ -2,15 +2,17 @@ package cinema_Infrastructure.film;
 
 import java.io.Serializable;
 
+//Classe Film che implementa l'interfaccia IFilm e Serializable per la persistenza dei dati.
+//Rappresenta un film con attributi come titolo, genere, durata e un ID univoco.
 public class Film implements IFilm, Serializable {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L; // Aggiunge un serialVersionUID per la Serializzazione
     private String titolo;
     private String genere;
     private int durata;
     private long id; // Identificativo univoco del film.
 
-    // Costruttore che accetta solo il titolo del film.
 
+    // Costruttore per creare un nuovo film con titolo, durata e genere specificati.
     public Film(String titolo, int durata, String genere){
         this.titolo = titolo;
         this.durata = durata;
@@ -18,7 +20,7 @@ public class Film implements IFilm, Serializable {
 
     }
 
-
+    // Metodi getter e setter per gli attributi del film.
     public long getId(){return id;}
 
     public void setId(long id){

@@ -7,10 +7,15 @@ import exception.sala.SalaNonTrovataException;
 
 import java.util.List;
 
+// RimuoviSala è la classe concreta che implementa l'interfaccia IRimuoviSala,
+// agendo come il 'Receiver' nel pattern Command.
+// Ha il compito di gestire la rimozione di una Sala.
 public class RimuoviSala implements IRimuoviSala {
 
+    // Lista delle sale
     private List<ISala> sale; // Usa l'interfaccia ISala
 
+    // Costruttore che inizializza la classe con una lista di sale.
     public RimuoviSala(List<ISala> sale) {
         this.sale = sale;
     }
@@ -27,8 +32,6 @@ public class RimuoviSala implements IRimuoviSala {
         boolean esisteSala = esisteSalaPerId(idSala);
         if (esisteSala) {
             sale.removeIf(sala -> sala.getId() == idSala);
-            // Salva lo stato aggiornato delle sale su file dopo la rimozione
-            //SalaSerializer.serializeSaleList(sale, FILE_PATH);
             System.out.println("Sala con ID: " + idSala + " rimossa con successo.");
         } else {
             throw new SalaNonTrovataException("Sala con ID " + idSala + " non presente nella lista.");
