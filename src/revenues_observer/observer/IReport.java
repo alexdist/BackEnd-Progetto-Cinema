@@ -1,8 +1,6 @@
 package revenues_observer.observer;
 
 
-
-
 //OBSERVER
 // Interfaccia Observer: definisce l'operazione di update che deve essere implementata da ogni observer concreto.
 public interface IReport {

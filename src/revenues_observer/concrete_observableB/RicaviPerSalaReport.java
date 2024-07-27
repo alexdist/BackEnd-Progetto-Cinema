@@ -52,6 +52,7 @@ public class RicaviPerSalaReport implements IReport, Serializable {
             ricaviPerSala.merge(numeroSala, biglietto.getCosto(), Double::sum);
         }
         System.out.println("Report Ricavi per Sala:");
+        //espressione lambda ( ovver è funziona anonima che permette di definire in maniera breve e diretta un azione)
         ricaviPerSala.forEach((sala, ricavo) ->
                 System.out.println("Sala " + sala + ": ricavi totali = " + ricavo + "€"));
     }

@@ -30,8 +30,9 @@ public class PrezzoWeekEndStrategy implements IPrezzoStrategy {
     @Override
     public void execute() {
         // Applica un aumento percentuale ai prezzi per il weekend
-        double nuovoPrezzoIntero = prezziBiglietto.getPrezzoIntero() * (1 + aumentoPercentuale);
-        double nuovoPrezzoRidotto = prezziBiglietto.getPrezzoRidotto() * (1 + aumentoPercentuale);
+
+        double nuovoPrezzoIntero = prezziBiglietto.getPrezzoIntero() * (1 + aumentoPercentuale/100);
+        double nuovoPrezzoRidotto = prezziBiglietto.getPrezzoRidotto() * (1 + aumentoPercentuale/100);
 
         prezziBiglietto.setPrezzoIntero(nuovoPrezzoIntero);
         prezziBiglietto.setPrezzoRidotto(nuovoPrezzoRidotto);
